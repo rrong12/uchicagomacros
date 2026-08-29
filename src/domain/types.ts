@@ -39,8 +39,20 @@ export interface HallDay {
   hall: Hall;
   date: string;
   closed: boolean;
-  /** Every period available that day. Empty when closed. */
+  /** Every period available that day, for the switcher. Empty when closed. */
   periods: PeriodSummary[];
-  /** The period the API returned in full. Null when closed. */
-  currentPeriod: PeriodMenu | null;
+  /**
+   * Full item detail for each period we've fetched.
+   *
+   * A single `periods` request returns only ONE period's items — always the
+   * one with `sort_order: 0`, regardless of the time of day. Other periods
+   * require a separate request each, so this may hold fewer entries than
+   * `periods` lists.
+   */
+  menus: PeriodMenu[];
+}
+
+/** Find a fetched period's menu by name. Returns null if not fetched or absent. */
+export function menuFor(day: HallDay, periodName: string): PeriodMenu | null {
+  return day.menus.find((m) => m.name === periodName) ?? null;
 }

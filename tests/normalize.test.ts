@@ -24,19 +24,19 @@ describe("normalizeHallDay — open hall", () => {
     expect(day.periods[0].name).toBeTruthy();
   });
 
-  it("extracts items from the current period", () => {
-    expect(day.currentPeriod).not.toBeNull();
-    expect(day.currentPeriod!.items.length).toBeGreaterThan(0);
+  it("extracts items from the returned period", () => {
+    expect(day.menus.length).toBe(1);
+    expect(day.menus[0].items.length).toBeGreaterThan(0);
   });
 
   it("tags every item with its category", () => {
-    for (const item of day.currentPeriod!.items) {
+    for (const item of day.menus[0].items) {
       expect(item.category).toBeTruthy();
     }
   });
 
   it("parses macros as numbers or null, never NaN", () => {
-    for (const item of day.currentPeriod!.items) {
+    for (const item of day.menus[0].items) {
       for (const v of [item.calories, item.protein_g, item.fat_g, item.carbs_g]) {
         expect(v === null || Number.isFinite(v)).toBe(true);
       }
@@ -44,7 +44,7 @@ describe("normalizeHallDay — open hall", () => {
   });
 
   it("finds calories even though v1 has no top-level calories field", () => {
-    const withCalories = day.currentPeriod!.items.filter((i) => i.calories !== null);
+    const withCalories = day.menus[0].items.filter((i) => i.calories !== null);
     expect(withCalories.length).toBeGreaterThan(0);
   });
 
@@ -63,8 +63,8 @@ describe("normalizeHallDay — closed hall", () => {
     expect(day.closed).toBe(true);
   });
 
-  it("has no current period and no periods", () => {
-    expect(day.currentPeriod).toBeNull();
+  it("has no menus and no periods", () => {
+    expect(day.menus).toEqual([]);
     expect(day.periods).toEqual([]);
   });
 
@@ -91,7 +91,7 @@ describe("normalizeHallDay — malformed input", () => {
       periods: [{ id: "p1", name: "Lunch" }],
     };
     const day = normalizeHallDay(baker, raw);
-    const item = day.currentPeriod!.items[0];
+    const item = day.menus[0].items[0];
     expect(item.macrosComplete).toBe(false);
     expect(item.protein_g).toBeNull();
   });
@@ -126,6 +126,6 @@ describe("normalizeHallDay — malformed input", () => {
       periods: [{ id: "p1", name: "Lunch" }],
     };
     const day = normalizeHallDay(baker, raw);
-    expect(day.currentPeriod!.items[0].protein_g).toBe(9);
+    expect(day.menus[0].items[0].protein_g).toBe(9);
   });
 });

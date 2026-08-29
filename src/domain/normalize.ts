@@ -109,7 +109,7 @@ export function normalizeHallDay(
       date: raw.menu?.date ?? fallbackDate,
       closed: true,
       periods: [],
-      currentPeriod: null,
+      menus: [],
     };
   }
 
@@ -125,6 +125,6 @@ export function normalizeHallDay(
     date: raw.menu.date ?? fallbackDate,
     closed: false,
     periods,
-    currentPeriod: current,
+    menus: current ? [current] : [],
   };
 }

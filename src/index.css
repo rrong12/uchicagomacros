@@ -1,47 +1,242 @@
+:root {
+  --maroon: #7a1420;
+  --ink: #1b1917;
+  --muted: #6e6862;
+  --faint: #a39c94;
+  --paper: #fbf9f6;
+  --card: #ffffff;
+  --rule: #e8e3dc;
+}
+
 * { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  background: #faf9f7;
-  color: #1a1a1a;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  font-feature-settings: "tnum" 1;
+  line-height: 1.45;
 }
 
-.app { max-width: 640px; margin: 0 auto; padding: 1rem; }
-
-header h1 { font-size: 1.4rem; margin: 0; }
-.date { color: #666; font-size: 0.85rem; margin: 0.2rem 0 1rem; }
-
-.filterbar {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-  position: sticky; top: 0; background: #faf9f7;
-  padding: 0.5rem 0; z-index: 1;
+.app {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
 }
-.chips { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-.chip {
-  border: 1px solid #d4d0c8; background: #fff; border-radius: 999px;
-  padding: 0.35rem 0.8rem; font-size: 0.85rem; cursor: pointer;
-}
-.chip-active { background: #800000; color: #fff; border-color: #800000; }
 
-.hall { margin: 1.2rem 0; }
-.hall h2 {
-  font-size: 1.05rem; margin: 0 0 0.5rem;
-  display: flex; justify-content: space-between; align-items: baseline;
+/* ── masthead ─────────────────────────────────────────── */
+
+.masthead { margin-bottom: 1.25rem; }
+
+.masthead h1 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--maroon);
 }
-.period { font-size: 0.8rem; font-weight: 400; color: #666; }
-.hall-closed h2 { color: #999; }
-.closed-note { color: #999; font-size: 0.85rem; margin: 0; }
+.masthead h1 span { color: var(--ink); }
+
+.date {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+/* ── controls ─────────────────────────────────────────── */
+
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(var(--paper) 78%, rgba(251, 249, 246, 0));
+}
+
+.segmented {
+  display: inline-flex;
+  background: #f0ece6;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.seg {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 0.36rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.seg:hover { color: var(--ink); }
+.seg-on {
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+.toggle {
+  appearance: none;
+  font: inherit;
+  font-size: 0.78rem;
+  border: 1px solid var(--rule);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.34rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.toggle:hover { border-color: var(--faint); }
+.toggle-on {
+  background: var(--maroon);
+  border-color: var(--maroon);
+  color: #fff;
+}
+
+/* ── hall ─────────────────────────────────────────────── */
+
+.hall {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 0.9rem 1rem 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.hall-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.hall-head h2 {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.hall-count {
+  font-size: 0.72rem;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.hall-best {
+  margin: 0.3rem 0 0.2rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.hall-best strong { color: var(--ink); font-weight: 600; }
+
+.hall-empty {
+  margin: 0.4rem 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--faint);
+}
+
+/* ── categories ───────────────────────────────────────── */
+
+.category { margin-top: 0.9rem; }
+
+.category-name {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 0.15rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── items ────────────────────────────────────────────── */
 
 .items { list-style: none; padding: 0; margin: 0; }
-.item { padding: 0.55rem 0; border-bottom: 1px solid #ebe8e2; }
-.item-head { display: flex; justify-content: space-between; gap: 0.5rem; }
-.item-name { font-size: 0.92rem; }
-.item-portion { font-size: 0.75rem; color: #888; white-space: nowrap; }
-.item-macros {
-  display: flex; gap: 0.7rem; font-size: 0.78rem;
-  color: #666; margin-top: 0.2rem;
+
+.item { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+.item:last-child { border-bottom: 0; }
+
+.item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem;
 }
 
-.status { color: #666; font-size: 0.9rem; }
-.status-error { color: #a00; }
+.item-name { font-size: 0.94rem; }
+
+.item-portion {
+  font-size: 0.72rem;
+  color: var(--faint);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.macros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.28rem;
+}
+
+.macro {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.22rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.macro b { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+
+.macro-label { color: var(--faint); font-size: 0.7rem; }
+
+.macro-accent b { color: var(--maroon); }
+
+/* ── status ───────────────────────────────────────────── */
+
+.closed-line {
+  font-size: 0.8rem;
+  color: var(--faint);
+  text-align: center;
+  margin: 1.5rem 0 0;
+}
+
+.status { color: var(--muted); font-size: 0.88rem; }
+.status-error { color: #a3231d; }
+
+.skeleton { display: grid; gap: 0.9rem; margin-top: 1rem; }
+.skeleton span {
+  display: block;
+  height: 5.5rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f2eee8 25%, #e9e4dc 50%, #f2eee8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton span { animation: none; }
+}

@@ -1,42 +1,84 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useMenus } from "./state/useMenus";
-import { FilterBar } from "./ui/FilterBar";
+import { currentPeriodName, displayDate } from "./domain/datetime";
+import { Controls } from "./ui/Controls";
 import { HallCard } from "./ui/HallCard";
-import type { SortField, SortDirection } from "./domain/filter";
 import "./index.css";
 
 export default function App() {
-  const { days, loading, error, date } = useMenus();
-  const [sortField, setSortField] = useState<SortField>("protein_g");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const { days, loading, error } = useMenus();
+  const [period, setPeriod] = useState<string | null>(null);
+  const [proteinFirst, setProteinFirst] = useState(false);
+
+  const open = days.filter((d) => !d.closed);
+  const closed = days.filter((d) => d.closed);
+
+  // Every period any open hall offers, in the API's own order.
+  const periods = useMemo(() => {
+    const seen: string[] = [];
+    for (const day of open) {
+      for (const p of day.periods) {
+        if (!seen.includes(p.name)) seen.push(p.name);
+      }
+    }
+    return seen;
+  }, [open]);
+
+  // Default to the meal being served now; fall back to whatever exists.
+  const active =
+    period && periods.includes(period)
+      ? period
+      : periods.includes(currentPeriodName())
+        ? currentPeriodName()
+        : (periods[0] ?? "");
 
   return (
-    <main className="app">
-      <header>
-        <h1>UChicagoMacros</h1>
-        <p className="date">{date}</p>
+    <div className="app">
+      <header className="masthead">
+        <h1>
+          UChicago<span>Macros</span>
+        </h1>
+        <p className="date">{displayDate()}</p>
       </header>
 
-      <FilterBar
-        sortField={sortField}
-        sortDirection={sortDirection}
-        onSortFieldChange={setSortField}
-        onSortDirectionToggle={() =>
-          setSortDirection((d) => (d === "desc" ? "asc" : "desc"))
-        }
-      />
+      {loading && (
+        <div className="skeleton" aria-live="polite">
+          <span />
+          <span />
+          <span />
+        </div>
+      )}
 
-      {loading && <p className="status">Loading menus…</p>}
       {error && <p className="status status-error">{error}</p>}
 
-      {days.map((day) => (
+      {!loading && !error && periods.length > 0 && (
+        <Controls
+          periods={periods}
+          period={active}
+          onPeriodChange={setPeriod}
+          proteinFirst={proteinFirst}
+          onProteinFirstToggle={() => setProteinFirst((v) => !v)}
+        />
+      )}
+
+      {!loading && !error && open.length === 0 && (
+        <p className="status">Every dining hall is closed today.</p>
+      )}
+
+      {open.map((day) => (
         <HallCard
           key={day.hall.id}
           day={day}
-          sortField={sortField}
-          sortDirection={sortDirection}
+          period={active}
+          proteinFirst={proteinFirst}
         />
       ))}
-    </main>
+
+      {closed.length > 0 && (
+        <p className="closed-line">
+          Closed today: {closed.map((d) => d.hall.name).join(", ")}
+        </p>
+      )}
+    </div>
   );
 }

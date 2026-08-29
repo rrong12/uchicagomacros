@@ -18,3 +18,27 @@ export async function fetchPeriods(
   }
   return res.json();
 }
+
+/**
+ * Fetch one specific period's items.
+ *
+ * `fetchPeriods` only ever returns the `sort_order: 0` period's items, so
+ * getting Lunch or Dinner needs one of these per period. The response has the
+ * same top-level shape, so `normalizeHallDay` handles it unchanged.
+ *
+ * Browser-only, same as `fetchPeriods`.
+ */
+export async function fetchPeriodDetail(
+  locationId: string,
+  periodId: string,
+  date: string
+): Promise<unknown> {
+  const url = `${BASE}/location/${locationId}/periods/${periodId}?platform=0&date=${date}`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(
+      `DineOnCampus ${res.status} for ${locationId}/${periodId} on ${date}`
+    );
+  }
+  return res.json();
+}
