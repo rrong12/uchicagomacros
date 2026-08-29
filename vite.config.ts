@@ -3,6 +3,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  // Served from https://rrong12.github.io/uchicagomacros/ — GitHub Pages
+  // puts project sites under a subpath, so assets need this prefix.
+  // Change to "/" if moving to Vercel or a custom domain.
+  base: "/uchicagomacros/",
   plugins: [react()],
   test: {
     environment: "jsdom",
