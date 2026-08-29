@@ -127,7 +127,7 @@ npm install -D vitest jsdom @testing-library/react @testing-library/jest-dom
 Replace the file with:
 
 ```ts
-/// <reference types="vitest" />
+/// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
