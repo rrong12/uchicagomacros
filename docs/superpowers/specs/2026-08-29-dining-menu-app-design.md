@@ -77,17 +77,18 @@ within one period. `all_locations` is not needed — location IDs are hardcoded
 
 ### 2.4 The four locations
 
-All four confirmed working against v1 on 2026-08-29:
+All four confirmed working against v1 on 2026-08-29. Names are not returned by
+the API (§2.5) and were mapped by observation in the browser.
 
-```
-618a6caab63f1e2d4442bdf5   ← open on 2026-08-29 (Breakfast|Lunch|Dinner)
-618a6efbb63f1e2d444389c1
-618a6df9b63f1e2d692b1f5c
-618a6f95b63f1e2d3b454065
-```
+| Hall | Location ID | Status 2026-08-29 |
+|---|---|---|
+| Baker | `618a6caab63f1e2d4442bdf5` | open — Breakfast \| Lunch \| Dinner |
+| Woodlawn | `618a6df9b63f1e2d692b1f5c` | `closed: true` |
+| Bartlett | `618a6f95b63f1e2d3b454065` | `closed: true` |
+| Cathey | `618a6efbb63f1e2d444389c1` | `closed: true` |
 
-Mapping IDs to hall names (Baker / Cathey / Woodlawn / Bartlett) is outstanding —
-see §9.
+Note the IDs were read from **v4** URLs but verified to work against **v1** — the
+two APIs share location identifiers.
 
 ### 2.5 Payload shape (v1 — snake_case)
 
@@ -332,9 +333,10 @@ filters, saved targets, share-a-plate links. Scoped by what users ask for.
 
 ## 9. Open questions
 
-- **Hall names.** Which of the four IDs is Baker / Cathey / Woodlawn / Bartlett.
-  Trivial to resolve; currently unmapped.
-- **Product name.** Must avoid University trademarks.
+- **Product name.** Working name is **UChicagoMacros**. Note this contains a
+  University trademark, which the original constraints ruled out. Acceptable for
+  a repo name; revisit before any custom domain, campus-wide promotion, or app
+  store listing.
 - **Sanctioned access.** Email UChicago Dining about official API access. This is
   the only real mitigation for the v1-retirement risk, and an approved feed would
   also let history back into scope.
