@@ -38,6 +38,22 @@ export function parseNutrientValue(
   return Number.isFinite(n) ? n : null;
 }
 
+/**
+ * Nutrient names the API returns that we deliberately don't model.
+ * Listed explicitly so the "unrecognized nutrient" warning stays meaningful —
+ * it should fire for names we've never seen, not for ones we chose to skip.
+ */
+export const KNOWN_UNMAPPED: ReadonlySet<string> = new Set([
+  "Cholesterol (mg)",
+  "Potassium (mg)",
+  "Calcium (mg)",
+  "Iron (mg)",
+  "Vitamin D (IU)",
+  "Vitamin C (mg)",
+  "Vitamin A (RE)",
+  "Calories From Fat",
+]);
+
 /** True when every macro we sort and filter on is present. */
 export function hasCompleteMacros(item: Pick<
   MenuItem,

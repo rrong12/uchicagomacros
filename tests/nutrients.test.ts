@@ -26,6 +26,12 @@ describe("parseNutrientValue", () => {
   it("does not treat a missing value as zero", () => {
     expect(parseNutrientValue("")).not.toBe(0);
   });
+
+  it("returns null for observed non-numeric value_numeric values", () => {
+    expect(parseNutrientValue("0+")).toBeNull();
+    expect(parseNutrientValue("3+")).toBeNull();
+    expect(parseNutrientValue("-")).toBeNull();
+  });
 });
 
 describe("NUTRIENT_FIELDS", () => {
