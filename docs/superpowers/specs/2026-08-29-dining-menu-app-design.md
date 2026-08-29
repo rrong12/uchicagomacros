@@ -89,30 +89,55 @@ All four confirmed working against v1 on 2026-08-29:
 Mapping IDs to hall names (Baker / Cathey / Woodlawn / Bartlett) is outstanding —
 see §9.
 
-### 2.5 Payload shape
+### 2.5 Payload shape (v1 — snake_case)
 
-The periods response carries `{status, closed, menu, periods[]}`. A period detail
-response nests `period.categories[].items[]`, where each item is:
+> ⚠️ **v1 and v4 use different field naming.** v4 returns `valueNumeric`,
+> `mrnFull`, `sortOrder`, `customAllergens`, and a convenience `calories` field.
+> **v1 returns `value_numeric`, `mrn_full`, `sort_order`, no `customAllergens`,
+> and no top-level `calories`.** We build against v1. Any example found online or
+> in the D.I.S.H docs must be checked for which shape it is.
+
+Top-level keys: `status`, `request_time`, `records`, `allergen_filter`, `menu`,
+`periods`, `closed`.
+
+- `periods` (top level) — the **list** of available meal periods for the day.
+- `menu.periods` — a **single object**, the full detail of one period, already
+  containing `categories[].items[]`. The first request therefore returns complete
+  item data for the default period; a second call is only needed for *other*
+  periods (§5.2).
+
+An item:
 
 ```jsonc
 {
-  "id": "6968936a83c04986a06cbbd6",
-  "name": "Scrambled Eggs",
-  "portion": "1/2 cup",
-  "ingredients": "Liquid Egg^, Canola Oil",
-  "calories": 210,
-  "customAllergens": [],
+  "id": "6a9349a7190d6bcc98a24e43",
+  "name": "Blueberry Muffin",
+  "desc": "Bakery fresh blueberry muffin",
+  "portion": "2 oz portion",
+  "ingredients": "Muffin Mix^, Water, Blueberries, All Purpose Flour^",
   "nutrients": [
-    { "id": null, "name": "Protein (g)", "value": "14", "uom": "g", "valueNumeric": "14" }
+    { "id": "", "name": "Protein (g)", "value": "2", "uom": "g", "value_numeric": "2" },
+    { "id": "", "name": "Dietary Fiber (g)", "value": "less than 1 gram",
+      "uom": "g", "value_numeric": "1" }
     // Calories, Total Carbohydrates (g), Sugar (g), Total Fat (g),
-    // Saturated Fat (g), Cholesterol (mg), Dietary Fiber (g),
-    // Sodium (mg), Potassium (mg), ...
+    // Cholesterol (mg), Sodium (mg), Potassium (mg), Calcium (mg), Iron (mg), ...
   ]
 }
 ```
 
-**Macros are present per item, with portion sizes.** This is what the plate
-builder depends on, and it is confirmed rather than assumed.
+**Macros are present per item, with portion sizes.** Confirmed, not assumed.
+
+**Three v1-specific parsing hazards:**
+
+1. **No `calories` field.** Calories exist only as a `nutrients[]` entry named
+   `"Calories"`. There is no shortcut.
+2. **`value` may be prose, not a number** — `"less than 1 gram"` was observed.
+   Only `value_numeric` is safely parseable, and it rounds (that item reports
+   `"1"`).
+3. **`nutrients[].id` is `""`**, so it cannot be used as a key (§5.4).
+
+**The API does not return hall names.** `menu.name` is `null` and no `location`
+object exists. Hall names must be hardcoded alongside the IDs (§2.4).
 
 **Two observed behaviours the UI must handle:**
 
@@ -231,16 +256,17 @@ re-requesting it on every page load is wasteful.
 
 ### 5.4 Nutrient normalization — the fragile layer
 
-`nutrients[].id` is `null` for every entry, so **nutrients can only be matched by
-name string** (`"Protein (g)"`, `"Total Fat (g)"`). Values are strings, including
-`valueNumeric`.
+`nutrients[].id` is `""` for every entry, so **nutrients can only be matched by
+name string** (`"Protein (g)"`, `"Total Fat (g)"`). All values are strings.
 
 `normalize.ts` therefore:
 
 - maps known name strings to canonical fields (`protein_g`, `fat_g`, `carbs_g`,
-  `calories`, `sodium_mg`, `fiber_g`, …)
-- parses `valueNumeric` with `Number()`, treating `null`, `""`, and `NaN` as
-  **missing** rather than zero — an item with unknown protein is not a
+  `calories`, `sodium_mg`, `fiber_g`, …) — including `"Calories"`, which in v1
+  exists *only* here and has no top-level field
+- reads **`value_numeric`**, never `value` — `value` may contain prose such as
+  `"less than 1 gram"`. Parse with `Number()`, treating `""`, `null`, and `NaN` as
+  **missing** rather than zero. An item with unknown protein is not a
   zero-protein item, and the optimizer must not treat it as one
 - **logs unrecognized nutrient names** rather than silently discarding them, so
   upstream renames surface instead of quietly degrading results
