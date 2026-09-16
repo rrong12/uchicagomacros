@@ -4,6 +4,8 @@ import { currentPeriodName } from "./domain/datetime";
 import { HALLS } from "./domain/halls";
 import { Controls } from "./ui/Controls";
 import { HallCard } from "./ui/HallCard";
+import { usePlate } from "./state/usePlate";
+import { PlatePanel } from "./ui/PlatePanel";
 import { Icon } from "./ui/Icon";
 import "./index.css";
 
@@ -30,6 +32,9 @@ export default function App() {
     days.find((d) => !d.closed) ??
     days[0];
   const selectedId = selected?.hall.id ?? HALLS[0].id;
+  const plate = usePlate(
+    JSON.stringify([selected?.date ?? date, selectedId, activePeriod]),
+  );
   const dateLabel = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     month: "long",
@@ -195,7 +200,20 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <HallCard day={selected} period={activePeriod} query={query} />
+                {!selected.closed && (
+                  <PlatePanel
+                    plate={plate}
+                    hall={selected.hall.name}
+                    period={activePeriod}
+                    date={selected.date}
+                  />
+                )}
+                <HallCard
+                  day={selected}
+                  period={activePeriod}
+                  query={query}
+                  onAdd={plate.add}
+                />
               </>
             )}
             {!selected && (

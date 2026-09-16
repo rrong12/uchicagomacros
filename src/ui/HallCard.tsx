@@ -6,6 +6,7 @@ interface Props {
   day: HallDay;
   period: string;
   query?: string;
+  onAdd?: (item: MenuItem) => void;
 }
 function byCategory(items: readonly MenuItem[]): Array<[string, MenuItem[]]> {
   const groups = new Map<string, MenuItem[]>();
@@ -17,7 +18,7 @@ function byCategory(items: readonly MenuItem[]): Array<[string, MenuItem[]]> {
   }
   return [...groups];
 }
-export function HallCard({ day, period, query = "" }: Props) {
+export function HallCard({ day, period, query = "", onAdd }: Props) {
   const menu = menuFor(day, period);
   let title = "",
     message = "";
@@ -69,7 +70,7 @@ export function HallCard({ day, period, query = "" }: Props) {
           </div>
           <ul className="items">
             {items.map((item, index) => (
-              <ItemRow key={`${item.id}-${index}`} item={item} />
+              <ItemRow key={`${item.id}-${index}`} item={item} onAdd={onAdd} />
             ))}
           </ul>
         </section>

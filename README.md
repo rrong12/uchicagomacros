@@ -59,7 +59,7 @@ npm run lint
 npm run build
 ```
 
-47 tests cover normalization against captured API responses, date handling,
+53 tests cover normalization against captured API responses, date handling,
 cache behavior, macro utilities, rendering, hall/meal switching, search, and
 closed/unavailable/loading/error states. Navigation tests use controlled menu
 state; fixture tests retain the original captured responses in `tests/fixtures/`.
@@ -67,9 +67,14 @@ GitHub Actions typechecks, tests, and builds before publishing pushes to main.
 
 ## Next
 
-The plate builder is planned, not implemented. It will suggest portions of menu
-items against macro targets. Accounts, calorie logging, and menu history are not
-part of the current app.
+The manual plate builder is available: add dishes, change servings in half-serving
+steps (0.5–20), remove items, and see estimated macro totals. Missing nutrients
+produce an “Incomplete” total. Plates are stored locally per hall, meal, and date;
+saved nutrition reflects when items were added. The provider’s serving labels
+are preserved, without guessing gram weights for cups or pieces.
+
+Automatic plate suggestions against macro targets are next. Accounts, calorie
+logging, and menu history are not part of the current app.
 
 ## Attribution
 

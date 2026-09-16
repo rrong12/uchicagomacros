@@ -10,7 +10,13 @@ function Nutrient({ value, label }: { value: number | null; label: string }) {
     </span>
   );
 }
-export function ItemRow({ item }: { item: MenuItem }) {
+export function ItemRow({
+  item,
+  onAdd,
+}: {
+  item: MenuItem;
+  onAdd?: (item: MenuItem) => void;
+}) {
   return (
     <li className="item">
       <div className="item-head">
@@ -28,6 +34,16 @@ export function ItemRow({ item }: { item: MenuItem }) {
           <Nutrient value={item.fat_g} label="Fat" />
         </div>
       </div>
+      {onAdd && (
+        <button
+          type="button"
+          className="add-to-plate"
+          aria-label={`Add ${item.name} to plate`}
+          onClick={() => onAdd(item)}
+        >
+          + Add to plate
+        </button>
+      )}
       {item.ingredients && (
         <details className="item-details">
           <summary>
