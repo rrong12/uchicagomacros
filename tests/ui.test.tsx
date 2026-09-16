@@ -9,17 +9,29 @@ afterEach(cleanup);
 
 function item(over: Partial<MenuItem> = {}): MenuItem {
   return {
-    id: "i1", name: "Scrambled Eggs", description: "", portion: "1/2 cup",
-    ingredients: "", category: "Kitchen",
-    calories: 210, protein_g: 14, fat_g: 16, carbs_g: 1,
-    sugar_g: null, fiber_g: null, sodium_mg: null, macrosComplete: true,
+    id: "i1",
+    name: "Scrambled Eggs",
+    description: "",
+    portion: "1/2 cup",
+    ingredients: "",
+    category: "Kitchen",
+    calories: 210,
+    protein_g: 14,
+    fat_g: 16,
+    carbs_g: 1,
+    sugar_g: null,
+    fiber_g: null,
+    sodium_mg: null,
+    macrosComplete: true,
     ...over,
   };
 }
 
 function day(over: Partial<HallDay> = {}): HallDay {
   return {
-    hall: HALLS[0], date: "2026-08-29", closed: false,
+    hall: HALLS[0],
+    date: "2026-08-29",
+    closed: false,
     periods: [{ id: "p1", name: "Breakfast" }],
     menus: [{ id: "p1", name: "Breakfast", items: [item()] }],
     ...over,
@@ -28,7 +40,11 @@ function day(over: Partial<HallDay> = {}): HallDay {
 
 describe("ItemRow", () => {
   it("renders known macros with their labels", () => {
-    render(<ul><ItemRow item={item()} /></ul>);
+    render(
+      <ul>
+        <ItemRow item={item()} />
+      </ul>,
+    );
     expect(screen.getByText("210")).toBeDefined();
     expect(screen.getByText("14")).toBeDefined();
   });
@@ -37,9 +53,14 @@ describe("ItemRow", () => {
     const { container } = render(
       <ul>
         <ItemRow
-          item={item({ calories: null, protein_g: null, fat_g: null, carbs_g: null })}
+          item={item({
+            calories: null,
+            protein_g: null,
+            fat_g: null,
+            carbs_g: null,
+          })}
         />
-      </ul>
+      </ul>,
     );
     const macros = container.querySelector(".macros")!;
     expect(macros.querySelectorAll("b").length).toBe(4);
@@ -53,8 +74,8 @@ describe("ItemRow", () => {
 
 describe("HallCard", () => {
   it("shows a message when the selected period has no menu", () => {
-    render(<HallCard day={day({ menus: [] })} period="Dinner" proteinFirst={false} />);
-    expect(screen.getByText("No dinner listed")).toBeDefined();
+    render(<HallCard day={day({ menus: [] })} period="Dinner" />);
+    expect(screen.getByText("Menu unavailable")).toBeDefined();
   });
 
   it("renders only the selected period", () => {
@@ -65,11 +86,17 @@ describe("HallCard", () => {
       ],
       menus: [
         { id: "p1", name: "Breakfast", items: [item({ name: "Eggs" })] },
-        { id: "p2", name: "Dinner", items: [item({ id: "i2", name: "Roast Chicken" })] },
+        {
+          id: "p2",
+          name: "Dinner",
+          items: [item({ id: "i2", name: "Roast Chicken" })],
+        },
       ],
     });
-    const { container } = render(<HallCard day={d} period="Dinner" proteinFirst={false} />);
-    const names = [...container.querySelectorAll(".item-name")].map((n) => n.textContent);
+    const { container } = render(<HallCard day={d} period="Dinner" />);
+    const names = [...container.querySelectorAll(".item-name")].map(
+      (n) => n.textContent,
+    );
     expect(names).toEqual(["Roast Chicken"]);
     expect(names).not.toContain("Eggs");
   });
@@ -83,45 +110,11 @@ describe("HallCard", () => {
       <HallCard
         day={day({ menus: [{ id: "p1", name: "Breakfast", items }] })}
         period="Breakfast"
-        proteinFirst={false}
-      />
+      />,
     );
-    const cats = [...container.querySelectorAll(".category-name")].map((n) => n.textContent);
+    const cats = [...container.querySelectorAll(".category-name")].map(
+      (n) => n.textContent,
+    );
     expect(cats).toEqual(["Kitchen", "Sweet Shoppe"]);
-  });
-
-  it("drops category grouping and sorts by protein when asked, unknowns last", () => {
-    const items = [
-      item({ id: "a", name: "Low", protein_g: 2, category: "Kitchen" }),
-      item({ id: "b", name: "Unknown", protein_g: null, category: "Grill", macrosComplete: false }),
-      item({ id: "c", name: "High", protein_g: 40, category: "Grill" }),
-    ];
-    const { container } = render(
-      <HallCard
-        day={day({ menus: [{ id: "p1", name: "Breakfast", items }] })}
-        period="Breakfast"
-        proteinFirst
-      />
-    );
-    expect(container.querySelectorAll(".category-name").length).toBe(0);
-    const names = [...container.querySelectorAll(".item-name")].map((n) => n.textContent);
-    expect(names).toEqual(["High", "Low", "Unknown"]);
-  });
-
-  it("summarises the highest-protein item", () => {
-    const items = [
-      item({ id: "a", name: "Low", protein_g: 2 }),
-      item({ id: "c", name: "High", protein_g: 40 }),
-    ];
-    const { container } = render(
-      <HallCard
-        day={day({ menus: [{ id: "p1", name: "Breakfast", items }] })}
-        period="Breakfast"
-        proteinFirst={false}
-      />
-    );
-    const summary = container.querySelector(".hall-best")!.textContent!;
-    expect(summary).toContain("High");
-    expect(summary).toContain("40g");
   });
 });

@@ -1,102 +1,79 @@
 # UChicagoMacros
 
-Today's menus for UChicago's four dining commons — Baker, Cathey, Woodlawn, and
-Bartlett — in one view, sortable by calories, protein, fat, and carbs.
+Today's menus for Baker, Cathey, Woodlawn, and Bartlett, with calories, protein,
+carbs, and fat visible on every food card.
 
-**Live: https://rrong12.github.io/uchicagomacros/**
+**[Open UChicagoMacros](https://rrong12.github.io/uchicagomacros/)**
 
-The official Dine On Campus portal shows one hall at a time and buries nutrition
-behind a click. The daily question is *where should I eat*, which needs all four
-halls side by side.
+## Browsing the menu
 
----
+- Select a dining hall and Breakfast, Lunch, or Dinner. The meal selection stays
+  the same when switching halls, including when that meal is unavailable there.
+- Search by dish or station name. Clear the search to see the whole menu again.
+- Browse food cards grouped by station; expand Ingredients for the upstream list.
+- Nutrition is per listed portion. An em dash means a value was not reported,
+  rather than zero. No macro display or protein-sort toggle is required.
+- Closed halls, missing meal data, loading, and network failures have distinct states.
 
-## Why there's no backend
+The responsive design uses a maroon header, warm white cards, and an original
+architectural line illustration. Desktop menus use three columns; phones use one.
+The initial meal choice is a Chicago-clock heuristic, not verified serving hours.
+“Menus available” does not mean a dining hall is currently open.
 
-The app runs entirely in the browser. That isn't a shortcut — it's forced by how
-the upstream API behaves, and it was measured before any code was written:
+## Data access
 
-| Client | Result |
-|---|---|
-| `curl` / any server-side fetch | **403** Cloudflare challenge |
-| Browser, cross-origin `fetch()` | **200 + full JSON** |
+React + TypeScript + Vite, deployed as a static app through GitHub Pages.
+Menu requests run in the visitor's browser using the Dine On Campus v1 API.
 
-Requests originate from the student's own browser, so they pass. Any server-side
-call — SSR, an edge function, a cron job — gets blocked. This is why there is no
-API route, no database, and no scheduled ingest, and why introducing server-side
-rendering would break production while working fine locally.
+During development, direct curl requests received Cloudflare 403 responses while
+cross-origin browser requests to v1 succeeded. The portal's apiv4 host did not
+allow our cross-origin browser test. These are observed access conditions, not
+vendor guarantees: this app depends on an undocumented upstream interface.
 
-There's a second wrinkle. The live portal has moved to `apiv4`, which sends no
-`Access-Control-Allow-Origin` header and so can't be read cross-origin. The
-legacy `v1` host still serves current data *and* permits CORS, so that's what
-this uses — a deliberate, documented dependency on a legacy endpoint.
-
-## The interesting part: the data is dirty
-
-Nutrition data arrives in a shape that punishes naive parsing.
-
-**Nutrients have no IDs.** Every `nutrients[].id` is `""`, so they can only be
-matched by display-name string. Unrecognized names are logged rather than
-silently dropped, with an explicit allowlist of names we deliberately skip — so
-the warning still means something when the upstream schema changes.
-
-**Numeric fields aren't reliably numeric.** Of 300 nutrient entries in a single
-day's menu, 26 hold values like `"0+"`, `"3+"`, or `"-"`. The human-readable
-`value` field is worse — `"less than 1 gram"` is a real observed value.
-
-**Missing is not zero.** An item whose protein the API didn't report is not a
-zero-protein item. Every macro is `number | null`, unknowns render as `—` rather
-than `0`, they sort last in *both* directions, and they're excluded from a filter
-on that field rather than silently passing it. This invariant is asserted at the
-parsing layer, the sorting layer, and the render layer, because getting it wrong
-would quietly produce wrong answers rather than visible errors.
-
-**Halls close.** Three of four are shut outside term. Closed is a normal render
-state, distinct from an open hall with an empty menu.
+The API's initial response includes only one meal's detail. The app loads other
+listed periods separately and caches responses in localStorage for the day.
+Upstream data or access rules may change. Google Fonts supplies the display fonts,
+with system font fallbacks when unavailable.
 
 ## Architecture
 
-```
-src/domain/     pure logic — no React, no network, fully unit-tested
-  types.ts      MenuItem, HallDay, Macro = number | null
-  halls.ts      the four location IDs
-  datetime.ts   today in America/Chicago, never the device's timezone
-  nutrients.ts  name → field mapping, value parsing
-  normalize.ts  raw API JSON → HallDay
-  filter.ts     sorting and filtering
-src/api/        client.ts (browser-only, documented) + cache.ts (localStorage)
-src/state/      useMenus — parallel fetch across four halls, cache-first
-src/ui/         presentation only
+```text
+src/domain/  menu types, hall IDs, Chicago dates, nutrient normalization, sorting/filter utilities
+src/api/     browser fetch client and localStorage cache
+src/state/   useMenus: load the four halls and each available meal
+src/ui/      meal controls, station groups, nutrition cards, icons
+src/App.tsx  hall selection, global meal selection, search, page composition
 ```
 
-Nothing in `domain/` imports React or calls `fetch`, which is what makes it
-testable against captured fixtures rather than mocks.
+Nutrient IDs are empty, so normalization maps display names to known fields.
+`value_numeric` can itself contain non-numeric data such as `0+` or `-`.
+Missing values remain `null` throughout parsing and rendering.
 
-## Tests
-
-44 tests. The domain tests run against **real captured API responses**
-(`tests/fixtures/`), not hand-written mocks, so they exercise the actual mess
-described above — including a genuinely closed hall whose response body is four
-keys with no `menu` object at all.
+## Develop and verify
 
 ```bash
-npm install
-npm test          # 44 tests
-npm run dev       # http://localhost:5173
+npm ci
+npm run dev      # http://localhost:5173/uchicagomacros/
+npm test
+npm run lint
 npm run build
 ```
 
-CI typechecks, tests, and builds before publishing, so a failing test blocks the
-deploy.
+47 tests cover normalization against captured API responses, date handling,
+cache behavior, macro utilities, rendering, hall/meal switching, search, and
+closed/unavailable/loading/error states. Navigation tests use controlled menu
+state; fixture tests retain the original captured responses in `tests/fixtures/`.
+GitHub Actions typechecks, tests, and builds before publishing pushes to main.
 
-## Not built
+## Next
 
-Menu history (needs the blocked server-side ingest), user accounts, and calorie
-logging. Next up is a plate builder: given macro targets, select a set of items
-that hits them, subject to constraints that keep the result edible — a bounded
-multi-dimensional knapsack over the day's menu.
+The plate builder is planned, not implemented. It will suggest portions of menu
+items against macro targets. Accounts, calorie logging, and menu history are not
+part of the current app.
 
-## Data
+## Attribution
 
-Menu data belongs to Dine On Campus and the University of Chicago. This is an
-unaffiliated student project.
+Independent student project by Robert Rong. Not affiliated with the University
+of Chicago. Menu and nutrition information is provided by Dine On Campus.
+The interface takes layout inspiration from [Eat UNC](https://eatunc.com/);
+its code, branding, and artwork are not reused.

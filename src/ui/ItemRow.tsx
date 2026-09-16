@@ -1,28 +1,41 @@
 import type { MenuItem } from "../domain/types";
-
-/** A missing macro shows an em dash. It must never render as 0. */
-function Macro({ value, label, accent }: { value: number | null; label: string; accent?: boolean }) {
+function Nutrient({ value, label }: { value: number | null; label: string }) {
   return (
-    <span className={accent ? "macro macro-accent" : "macro"}>
-      <b>{value === null ? "—" : value}</b>
+    <span className="macro">
       <span className="macro-label">{label}</span>
+      <span>
+        <b>{value === null ? "—" : value}</b>
+        {value !== null && <span className="unit">g</span>}
+      </span>
     </span>
   );
 }
-
 export function ItemRow({ item }: { item: MenuItem }) {
   return (
     <li className="item">
       <div className="item-head">
-        <span className="item-name">{item.name}</span>
-        {item.portion && <span className="item-portion">{item.portion}</span>}
+        <h4 className="item-name">{item.name}</h4>
+        <p className="item-portion">{item.portion || "Portion not listed"}</p>
       </div>
       <div className="macros">
-        <Macro value={item.calories} label="cal" />
-        <Macro value={item.protein_g} label="protein" accent />
-        <Macro value={item.fat_g} label="fat" />
-        <Macro value={item.carbs_g} label="carbs" />
+        <div className="calories">
+          <b>{item.calories === null ? "—" : item.calories}</b>
+          <span>kcal</span>
+        </div>
+        <div className="macro-breakdown">
+          <Nutrient value={item.protein_g} label="Protein" />
+          <Nutrient value={item.carbs_g} label="Carbs" />
+          <Nutrient value={item.fat_g} label="Fat" />
+        </div>
       </div>
+      {item.ingredients && (
+        <details className="item-details">
+          <summary>
+            Ingredients<span aria-hidden="true">+</span>
+          </summary>
+          <p>{item.ingredients}</p>
+        </details>
+      )}
     </li>
   );
 }
