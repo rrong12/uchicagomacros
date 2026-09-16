@@ -1,0 +1,33 @@
+name: CI
+
+# Deploy only runs on pushes to main, so without this a pull request merges
+# with no signal at all and a break is discovered once main is already broken.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Steps are kept separate rather than folded into `npm run build` so a
+      # failure names which gate broke. Lint runs here but not in Deploy, so
+      # this is the only place it gates anything.
+      - run: npx tsc -b
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build

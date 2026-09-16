@@ -65,7 +65,9 @@ closed/unavailable/loading/error states. The plate optimizer is pure and has
 property tests asserting every returned plate satisfies every declared
 constraint. Navigation tests use controlled menu state; fixture tests retain the
 original captured responses in `tests/fixtures/`.
-GitHub Actions typechecks, tests, and builds before publishing pushes to main.
+GitHub Actions runs the full gate — typecheck, lint, test, build — on every
+pull request, and typechecks, tests, and builds again before publishing pushes
+to main.
 
 ## Building a plate
 
