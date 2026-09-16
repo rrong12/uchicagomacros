@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMenus } from "./state/useMenus";
 import { currentPeriodName } from "./domain/datetime";
 import { HALLS } from "./domain/halls";
+import { menuFor } from "./domain/types";
 import { Controls } from "./ui/Controls";
 import { HallCard } from "./ui/HallCard";
 import { usePlate } from "./state/usePlate";
@@ -206,6 +207,7 @@ export default function App() {
                     hall={selected.hall.name}
                     period={activePeriod}
                     date={selected.date}
+                    items={menuFor(selected, activePeriod)?.items ?? []}
                   />
                 )}
                 <HallCard

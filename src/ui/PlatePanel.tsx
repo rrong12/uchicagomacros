@@ -1,9 +1,13 @@
 import { itemKey, type usePlate } from "../state/usePlate";
+import type { MenuItem } from "../domain/types";
+import { TargetForm } from "./TargetForm";
 interface Props {
   plate: ReturnType<typeof usePlate>;
   hall: string;
   period: string;
   date: string;
+  /** Every dish available for this hall and meal — the suggestion pool. */
+  items: readonly MenuItem[];
 }
 const macros = [
   ["calories", "Calories", "kcal"],
@@ -11,7 +15,7 @@ const macros = [
   ["carbs_g", "Carbs", "g"],
   ["fat_g", "Fat", "g"],
 ] as const;
-export function PlatePanel({ plate, hall, period, date }: Props) {
+export function PlatePanel({ plate, hall, period, date, items }: Props) {
   const { entries } = plate;
   return (
     <section
@@ -44,6 +48,11 @@ export function PlatePanel({ plate, hall, period, date }: Props) {
           </button>
         )}
       </div>
+      <TargetForm
+        items={items}
+        plateHasItems={entries.length > 0}
+        onAccept={(suggestion) => plate.replace(suggestion.selections)}
+      />
       {entries.length === 0 ? (
         <div className="plate-empty">
           <strong>Your plate is empty</strong>
