@@ -38,10 +38,10 @@ with system font fallbacks when unavailable.
 ## Architecture
 
 ```text
-src/domain/  menu types, hall IDs, Chicago dates, nutrient normalization, sorting/filter utilities
+src/domain/  menu types, hall IDs, Chicago dates, nutrient normalization, sorting/filter utilities, plate optimizer
 src/api/     browser fetch client and localStorage cache
-src/state/   useMenus: load the four halls and each available meal
-src/ui/      meal controls, station groups, nutrition cards, icons
+src/state/   useMenus: load the four halls and each available meal; usePlate and useTargets persist choices
+src/ui/      meal controls, station groups, nutrition cards, macro targets, icons
 src/App.tsx  hall selection, global meal selection, search, page composition
 ```
 
@@ -59,22 +59,39 @@ npm run lint
 npm run build
 ```
 
-53 tests cover normalization against captured API responses, date handling,
+90 tests cover normalization against captured API responses, date handling,
 cache behavior, macro utilities, rendering, hall/meal switching, search, and
-closed/unavailable/loading/error states. Navigation tests use controlled menu
-state; fixture tests retain the original captured responses in `tests/fixtures/`.
-GitHub Actions typechecks, tests, and builds before publishing pushes to main.
+closed/unavailable/loading/error states. The plate optimizer is pure and has
+property tests asserting every returned plate satisfies every declared
+constraint. Navigation tests use controlled menu state; fixture tests retain the
+original captured responses in `tests/fixtures/`.
+GitHub Actions runs the full gate — typecheck, lint, test, build — on every
+pull request, and typechecks, tests, and builds again before publishing pushes
+to main.
+
+## Building a plate
+
+Add dishes, change servings in half-serving steps (0.5–20), remove items, and
+see estimated macro totals. Missing nutrients produce an “Incomplete” total.
+Plates are stored locally per hall, meal, and date; saved nutrition reflects
+when items were added. The provider’s serving labels are preserved, without
+guessing gram weights for cups or pieces.
+
+Set targets for calories, protein, carbs, and fat, and the app suggests a plate
+that comes close. Suggestions use whole servings only — at most 6 across the
+plate, at most 2 of any one dish, drawn from at least 2 stations. Dishes missing
+any of the four macros are excluded rather than counted as zero, so a suggestion
+never hits a target with food it cannot account for. The two-station minimum can
+push a suggestion past an exact single-dish match; that is deliberate. Accepting
+a suggestion replaces the current plate, and asks first when it is not empty.
+Targets are saved per browser, not per hall. Every suggested plate stays fully
+editable afterward, including down to half servings.
 
 ## Next
 
-The manual plate builder is available: add dishes, change servings in half-serving
-steps (0.5–20), remove items, and see estimated macro totals. Missing nutrients
-produce an “Incomplete” total. Plates are stored locally per hall, meal, and date;
-saved nutrition reflects when items were added. The provider’s serving labels
-are preserved, without guessing gram weights for cups or pieces.
-
-Automatic plate suggestions against macro targets are next. Accounts, calorie
-logging, and menu history are not part of the current app.
+Allergen and dietary filters, share-a-plate links, and suggesting across all
+four halls at once. Accounts, calorie logging, and menu history are not part of
+the current app.
 
 ## Attribution
 

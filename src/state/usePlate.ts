@@ -21,6 +21,22 @@ const macroKeys = ["calories", "protein_g", "carbs_g", "fat_g"] as const;
 export function itemKey(item: PlateItem) {
   return JSON.stringify([item.id, item.name, item.category]);
 }
+/**
+ * Plates store a snapshot, not a reference: saved nutrition reflects what the
+ * menu said when the dish was added, even if upstream data shifts later.
+ */
+function snapshot(item: MenuItem): PlateItem {
+  return {
+    id: item.id,
+    name: item.name,
+    portion: item.portion,
+    category: item.category,
+    calories: item.calories,
+    protein_g: item.protein_g,
+    carbs_g: item.carbs_g,
+    fat_g: item.fat_g,
+  };
+}
 function read(): Plates {
   try {
     const value: unknown = JSON.parse(
@@ -78,24 +94,28 @@ export function usePlate(key: string) {
     saveError,
     add(item: MenuItem) {
       const existing = entries.find((e) => itemKey(e.item) === itemKey(item));
-      const snapshot: PlateItem = {
-        id: item.id,
-        name: item.name,
-        portion: item.portion,
-        category: item.category,
-        calories: item.calories,
-        protein_g: item.protein_g,
-        carbs_g: item.carbs_g,
-        fat_g: item.fat_g,
-      };
+      const saved = snapshot(item);
       update(
         existing
           ? entries.map((e) =>
               e === existing
-                ? { item: snapshot, servings: Math.min(20, e.servings + 1) }
+                ? { item: saved, servings: Math.min(20, e.servings + 1) }
                 : e,
             )
-          : [...entries, { item: snapshot, servings: 1 }],
+          : [...entries, { item: saved, servings: 1 }],
+      );
+    },
+    /**
+     * Overwrite the plate wholesale — used when accepting a suggestion.
+     * Servings are clamped to the same range the manual controls enforce, so
+     * a suggestion can never write a plate that `read()` would later reject.
+     */
+    replace(next: readonly { item: MenuItem; servings: number }[]) {
+      update(
+        next.map(({ item, servings }) => ({
+          item: snapshot(item),
+          servings: Math.max(0.5, Math.min(20, Math.round(servings * 2) / 2)),
+        })),
       );
     },
     change(id: string, delta: number) {
