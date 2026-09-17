@@ -1017,3 +1017,93 @@ a {
     justify-content: space-between;
   }
 }
+
+.dietary-filter {
+  margin: 0 0 20px;
+  padding: 16px 18px;
+  border: 1px solid #eadcdd;
+  border-radius: 12px;
+  background: #fbf7f6;
+}
+.dietary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.dietary-heading .eyebrow {
+  margin: 0;
+  color: #800000;
+  font-size: 9px;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 7px 13px;
+  border: 1px solid #e0cfd0;
+  border-radius: 999px;
+  background: #fff;
+  color: #2f2226;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: #c99ea1;
+}
+.chip-on {
+  background: #800000;
+  border-color: #800000;
+  color: #fff;
+}
+.chip-count {
+  font-size: 10px;
+  opacity: 0.65;
+}
+.dietary-note {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: #75696f;
+}
+.item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 20px 14px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.tag-label {
+  background: #ecf3ec;
+  color: #35562f;
+  border: 1px solid #d4e4d2;
+}
+.tag-allergen {
+  background: #f6f0ef;
+  color: #6d4a4a;
+  border: 1px solid #e5d8d9;
+}
+.tag-trace {
+  background: transparent;
+  color: #87737a;
+  border-style: dashed;
+}
+@media (max-width: 600px) {
+  .item-tags {
+    margin: 0 18px 12px;
+  }
+}

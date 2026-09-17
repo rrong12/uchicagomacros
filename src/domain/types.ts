@@ -6,6 +6,18 @@ export interface Hall {
   name: string;
 }
 
+/** One allergen tag the dining hall published for a dish. */
+export interface Allergen {
+  /** Name with any trailing `*` stripped: "Milk*" becomes "Milk". */
+  name: string;
+  /**
+   * True when the API starred the name. **The meaning is unconfirmed** — read
+   * it as "may contain". Never use it, or the absence of a tag, to assert that
+   * a dish is free of an allergen. See spec §2.7.
+   */
+  trace: boolean;
+}
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -13,6 +25,14 @@ export interface MenuItem {
   portion: string;
   ingredients: string;
   category: string;
+  /**
+   * Dietary labels the hall published — "Vegetarian", "Vegan", "Avoiding
+   * Gluten". Empty when none; we cannot distinguish "no labels" from "labels
+   * not reported", so we do not model that difference.
+   */
+  labels: string[];
+  /** Allergen tags, in API order. Absence of a tag is NOT a claim of absence. */
+  allergens: Allergen[];
   calories: Macro;
   protein_g: Macro;
   fat_g: Macro;

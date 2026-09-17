@@ -1,4 +1,11 @@
-import type { Hall, HallDay, MenuItem, PeriodMenu, PeriodSummary } from "./types";
+import type {
+  Allergen,
+  Hall,
+  HallDay,
+  MenuItem,
+  PeriodMenu,
+  PeriodSummary,
+} from "./types";
 import {
   NUTRIENT_FIELDS,
   KNOWN_UNMAPPED,
@@ -6,12 +13,24 @@ import {
   hasCompleteMacros,
 } from "./nutrients";
 
-/** Nutrient names already reported as unknown, so we log each one once. */
+/** Names already reported as unknown, so we log each one once. */
 const warned = new Set<string>();
+
+function warnOnce(message: string) {
+  if (warned.has(message)) return;
+  warned.add(message);
+  console.warn(message);
+}
 
 interface RawNutrient {
   name?: string;
   value_numeric?: string | null;
+}
+
+/** Exported so tests can build malformed `filters[]` without casting. */
+export interface RawFilter {
+  name?: string;
+  type?: string;
 }
 
 interface RawItem {
@@ -21,6 +40,7 @@ interface RawItem {
   portion?: string;
   ingredients?: string;
   nutrients?: RawNutrient[];
+  filters?: RawFilter[];
 }
 
 interface RawCategory {
@@ -41,6 +61,45 @@ export interface RawResponse {
   periods?: Array<{ id?: string; name?: string }> | null;
 }
 
+/**
+ * Split an item's `filters[]` into dietary labels and allergen tags.
+ *
+ * A trailing `*` on an allergen name becomes `trace: true`. What the star
+ * actually means upstream is unconfirmed (spec §2.7) — it is carried through so
+ * the UI can show it, never so anything can conclude a dish is safe.
+ */
+function normalizeFilters(raw: RawFilter[] | undefined): {
+  labels: string[];
+  allergens: Allergen[];
+} {
+  const labels: string[] = [];
+  const allergens: Allergen[] = [];
+
+  for (const f of raw ?? []) {
+    const name = (f.name ?? "").trim();
+    if (!name) continue;
+
+    if (f.type === "label") {
+      if (!labels.includes(name)) labels.push(name);
+      continue;
+    }
+    if (f.type === "allergen") {
+      const trace = name.endsWith("*");
+      const bare = trace ? name.slice(0, -1).trim() : name;
+      if (!bare) continue;
+      const existing = allergens.find((a) => a.name === bare);
+      // Keep the stronger claim if a dish somehow lists both forms: an
+      // unstarred tag outranks a starred one. Unobserved, but showing one
+      // dish two contradictory ways would be worse than this guard.
+      if (existing) existing.trace = existing.trace && trace;
+      else allergens.push({ name: bare, trace });
+      continue;
+    }
+    warnOnce(`[normalize] unrecognized filter type: "${f.type ?? ""}"`);
+  }
+  return { labels, allergens };
+}
+
 function normalizeItem(raw: RawItem, category: string): MenuItem {
   const macros = {
     calories: null as number | null,
@@ -56,9 +115,8 @@ function normalizeItem(raw: RawItem, category: string): MenuItem {
     const name = n.name ?? "";
     const field = NUTRIENT_FIELDS[name];
     if (!field) {
-      if (name && !KNOWN_UNMAPPED.has(name) && !warned.has(name)) {
-        warned.add(name);
-        console.warn(`[normalize] unrecognized nutrient name: "${name}"`);
+      if (name && !KNOWN_UNMAPPED.has(name)) {
+        warnOnce(`[normalize] unrecognized nutrient name: "${name}"`);
       }
       continue;
     }
@@ -72,6 +130,7 @@ function normalizeItem(raw: RawItem, category: string): MenuItem {
     portion: raw.portion ?? "",
     ingredients: raw.ingredients ?? "",
     category,
+    ...normalizeFilters(raw.filters),
     ...macros,
     macrosComplete: hasCompleteMacros(macros),
   };

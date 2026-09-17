@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useMenus } from "./state/useMenus";
 import { currentPeriodName } from "./domain/datetime";
 import { HALLS } from "./domain/halls";
+import { menuFor } from "./domain/types";
+import { DietaryFilter } from "./ui/DietaryFilter";
 import { Controls } from "./ui/Controls";
 import { HallCard } from "./ui/HallCard";
 import { usePlate } from "./state/usePlate";
@@ -14,6 +16,7 @@ export default function App() {
   const [period, setPeriod] = useState<string | null>(null);
   const [hallId, setHallId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [labels, setLabels] = useState<string[]>([]);
   const periods = [
     ...new Set(
       days
@@ -112,7 +115,12 @@ export default function App() {
                 type="button"
                 className={`hall-option${selected ? " selected" : ""}`}
                 aria-pressed={selected}
-                onClick={() => setHallId(hall.id)}
+                onClick={() => {
+                  setHallId(hall.id);
+                  // A label present on this menu may not exist on the next, and
+                  // a stale filter matching nothing reads as a broken app.
+                  setLabels([]);
+                }}
                 disabled={loading || !!error}
               >
                 <span className="hall-option-top">
@@ -165,7 +173,10 @@ export default function App() {
               <Controls
                 periods={periods}
                 period={activePeriod}
-                onPeriodChange={setPeriod}
+                onPeriodChange={(p) => {
+                  setPeriod(p);
+                  setLabels([]);
+                }}
               />
             )}
             {selected && (
@@ -208,10 +219,25 @@ export default function App() {
                     date={selected.date}
                   />
                 )}
+                {!selected.closed && (
+                  <DietaryFilter
+                    items={menuFor(selected, activePeriod)?.items ?? []}
+                    selected={labels}
+                    onToggle={(label) =>
+                      setLabels((current) =>
+                        current.includes(label)
+                          ? current.filter((l) => l !== label)
+                          : [...current, label],
+                      )
+                    }
+                    onClear={() => setLabels([])}
+                  />
+                )}
                 <HallCard
                   day={selected}
                   period={activePeriod}
                   query={query}
+                  labels={labels}
                   onAdd={plate.add}
                 />
               </>
