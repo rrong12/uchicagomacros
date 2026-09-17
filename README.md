@@ -10,6 +10,13 @@ carbs, and fat visible on every food card.
 - Select a dining hall and Breakfast, Lunch, or Dinner. The meal selection stays
   the same when switching halls, including when that meal is unavailable there.
 - Search by dish or station name. Clear the search to see the whole menu again.
+- Narrow by the dining hall's own dietary labels — Vegetarian, Vegan, Avoiding
+  Gluten. Chips show only labels present in the meal you're looking at, with
+  counts; picking two shows dishes carrying both. Filters reset when you switch
+  hall or meal, since a label on one menu may not exist on the next.
+- Every dish lists its allergen tags, with “may contain” shown separately from
+  a direct one. **These are for information, not safety.** A dish without a tag
+  is not a dish guaranteed free of it — see Allergens below.
 - Browse food cards grouped by station; expand Ingredients for the upstream list.
 - Nutrition is per listed portion. An em dash means a value was not reported,
   rather than zero. No macro display or protein-sort toggle is required.
@@ -19,6 +26,24 @@ The responsive design uses a maroon header, warm white cards, and an original
 architectural line illustration. Desktop menus use three columns; phones use one.
 The initial meal choice is a Chicago-clock heuristic, not verified serving hours.
 “Menus available” does not mean a dining hall is currently open.
+
+## Allergens
+
+Allergen and dietary tags come from Dine On Campus, unchanged. The app shows
+them; it never concludes anything from their absence.
+
+This matters because an untagged dish is not a dish free of that allergen — the
+data gives us no way to tell a real absence from a dish nobody tagged. Some
+allergen names also arrive with a trailing marker, shown here as “may contain”.
+What that marker means upstream is not documented, and the reading here was
+inferred from a single day's menu.
+
+So there is deliberately **no filter that excludes an allergen**. A control
+promising “no peanuts” would be asserting something this data cannot support,
+and the cost of being wrong is somebody's allergic reaction rather than a bad
+lunch. Dietary labels are filterable because they are positive claims the hall
+published; allergens are displayed only. If you have an allergy, confirm with
+the dining hall.
 
 ## Data access
 
@@ -38,10 +63,10 @@ with system font fallbacks when unavailable.
 ## Architecture
 
 ```text
-src/domain/  menu types, hall IDs, Chicago dates, nutrient normalization, sorting/filter utilities, plate optimizer
+src/domain/  menu types, hall IDs, Chicago dates, nutrient normalization, sorting/filter/label utilities, plate optimizer
 src/api/     browser fetch client and localStorage cache
 src/state/   useMenus: load the four halls and each available meal; usePlate and useTargets persist choices
-src/ui/      meal controls, station groups, nutrition cards, macro targets, icons
+src/ui/      meal controls, dietary chips, station groups, nutrition cards, macro targets, icons
 src/App.tsx  hall selection, global meal selection, search, page composition
 ```
 
@@ -59,8 +84,9 @@ npm run lint
 npm run build
 ```
 
-90 tests cover normalization against captured API responses, date handling,
-cache behavior, macro utilities, rendering, hall/meal switching, search, and
+112 tests cover normalization against captured API responses, date
+handling, cache behavior, macro utilities, dietary label parsing and filtering,
+allergen tag rendering, hall/meal switching, search, and
 closed/unavailable/loading/error states. The plate optimizer is pure and has
 property tests asserting every returned plate satisfies every declared
 constraint. Navigation tests use controlled menu state; fixture tests retain the
@@ -89,9 +115,9 @@ editable afterward, including down to half servings.
 
 ## Next
 
-Allergen and dietary filters, share-a-plate links, and suggesting across all
-four halls at once. Accounts, calorie logging, and menu history are not part of
-the current app.
+Share-a-plate links, and suggesting across all four halls at once. An allergen
+*exclusion* filter is deliberately not on this list — see Allergens above.
+Accounts, calorie logging, and menu history are not part of the current app.
 
 ## Attribution
 

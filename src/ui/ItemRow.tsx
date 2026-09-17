@@ -44,6 +44,27 @@ export function ItemRow({
           + Add to plate
         </button>
       )}
+      {(item.labels.length > 0 || item.allergens.length > 0) && (
+        <div className="item-tags">
+          {item.labels.map((label) => (
+            <span className="tag tag-label" key={label}>
+              {label}
+            </span>
+          ))}
+          {item.allergens.map((a) => (
+            <span
+              className={`tag tag-allergen${a.trace ? " tag-trace" : ""}`}
+              key={`${a.name}-${String(a.trace)}`}
+            >
+              {/*
+                A bare asterisk tells a reader nothing, and a purely visual
+                distinction tells a screen reader nothing. Spell it out.
+              */}
+              {a.trace ? `may contain ${a.name}` : a.name}
+            </span>
+          ))}
+        </div>
+      )}
       {item.ingredients && (
         <details className="item-details">
           <summary>

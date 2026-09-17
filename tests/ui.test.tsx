@@ -15,6 +15,8 @@ function item(over: Partial<MenuItem> = {}): MenuItem {
     portion: "1/2 cup",
     ingredients: "",
     category: "Kitchen",
+    labels: [],
+    allergens: [],
     calories: 210,
     protein_g: 14,
     fat_g: 16,

@@ -1,11 +1,14 @@
 import type { HallDay, MenuItem } from "../domain/types";
 import { menuFor } from "../domain/types";
+import { hasLabels } from "../domain/filter";
 import { ItemRow } from "./ItemRow";
 import { Icon } from "./Icon";
 interface Props {
   day: HallDay;
   period: string;
   query?: string;
+  /** Dietary labels a dish must all carry. Empty means no label filtering. */
+  labels?: readonly string[];
   onAdd?: (item: MenuItem) => void;
 }
 function byCategory(items: readonly MenuItem[]): Array<[string, MenuItem[]]> {
@@ -18,7 +21,13 @@ function byCategory(items: readonly MenuItem[]): Array<[string, MenuItem[]]> {
   }
   return [...groups];
 }
-export function HallCard({ day, period, query = "", onAdd }: Props) {
+export function HallCard({
+  day,
+  period,
+  query = "",
+  labels = [],
+  onAdd,
+}: Props) {
   const menu = menuFor(day, period);
   let title = "",
     message = "";
@@ -45,21 +54,35 @@ export function HallCard({ day, period, query = "", onAdd }: Props) {
   const term = query.trim().toLocaleLowerCase();
   const items = menu!.items.filter(
     (i) =>
-      !term || `${i.name} ${i.category}`.toLocaleLowerCase().includes(term),
+      (!term || `${i.name} ${i.category}`.toLocaleLowerCase().includes(term)) &&
+      hasLabels(i, labels),
   );
-  if (!items.length)
+  if (!items.length) {
+    // Tell search and filters apart. The old copy always said "try a different
+    // food name", which is useless advice to someone whose search box is empty
+    // and whose Vegan chip is the thing excluding everything.
+    const filtered = labels.length > 0;
     return (
       <section className="empty-state" role="status">
-        <Icon name="search" />
+        <Icon name={term ? "search" : "utensils"} />
         <h2>No matching dishes</h2>
-        <p>Try a different food or station name.</p>
+        <p>
+          {term && filtered
+            ? `Nothing matches “${query.trim()}” with ${labels.join(" + ")}. Try clearing one of them.`
+            : filtered
+              ? `No ${labels.join(" + ")} dishes in this meal. Try another meal, hall, or label.`
+              : "Try a different food or station name."}
+        </p>
       </section>
     );
+  }
   return (
     <section className="hall" aria-label={`${day.hall.name} ${period} menu`}>
       <p className="results-count" aria-live="polite">
         {items.length} {items.length === 1 ? "dish" : "dishes"}
-        {term ? ` matching “${query.trim()}”` : " · Nutrition per serving"}
+        {term && ` matching “${query.trim()}”`}
+        {labels.length > 0 && ` labelled ${labels.join(" + ")}`}
+        {!term && labels.length === 0 && " · Nutrition per serving"}
       </p>
       {byCategory(items).map(([category, items]) => (
         <section className="category" key={category} aria-label={category}>
