@@ -2,7 +2,9 @@
 
 **Date:** 2026-08-29
 **Owner:** Zhikang (Robert) Rong
-**Status:** Design approved pending review. No implementation started.
+**Status:** M1 (menu viewer) and M2 (plate builder) shipped. Parts of §2 were
+corrected on 2026-09-17 — corrections are marked inline rather than silently
+rewritten, so the record of what was believed when stays readable.
 
 ---
 
@@ -31,6 +33,12 @@ requires a scheduled server-side ingest job, and server-side access is blocked
 Every claim below was confirmed by direct observation on 2026-08-29. This section
 exists because the previous version of this project was specified on unverified
 assumptions and died in profiling.
+
+Three claims in §2.5 and §5.4 turned out to be wrong anyway, caught on
+2026-09-17 by re-reading the captured fixture rather than the notes taken from
+it. They are struck through and corrected in place. The lesson is not that
+observation failed — the fixture was right all along — but that a field absent
+from the notes is not a field absent from the payload.
 
 ### 2.1 The data source
 
@@ -93,10 +101,18 @@ two APIs share location identifiers.
 ### 2.5 Payload shape (v1 — snake_case)
 
 > ⚠️ **v1 and v4 use different field naming.** v4 returns `valueNumeric`,
-> `mrnFull`, `sortOrder`, `customAllergens`, and a convenience `calories` field.
-> **v1 returns `value_numeric`, `mrn_full`, `sort_order`, no `customAllergens`,
-> and no top-level `calories`.** We build against v1. Any example found online or
-> in the D.I.S.H docs must be checked for which shape it is.
+> `mrnFull`, `sortOrder`, `customAllergens`. **v1 snake-cases the same fields:
+> `value_numeric`, `mrn_full`, `sort_order`, `custom_allergens`.** We build
+> against v1. Any example found online or in the D.I.S.H docs must be checked
+> for which shape it is.
+>
+> **Corrected 2026-09-17** (from `tests/fixtures/baker-open.json`, the response
+> captured on 2026-08-29 — so this was wrong when written, not a change
+> upstream). This block previously claimed v1 returns *no* `customAllergens`
+> and *no* `calories`. Both claims are false: v1 items carry `custom_allergens`
+> (present on all 20 fixture items, though empty on every one) and a
+> convenience `calories` field. The naming difference is real; the missing
+> fields were not.
 
 Top-level keys: `status`, `request_time`, `records`, `allergen_filter`, `menu`,
 `periods`, `closed`.
@@ -116,13 +132,21 @@ An item:
   "desc": "Bakery fresh blueberry muffin",
   "portion": "2 oz portion",
   "ingredients": "Muffin Mix^, Water, Blueberries, All Purpose Flour^",
+  "calories": 180,
   "nutrients": [
     { "id": "", "name": "Protein (g)", "value": "2", "uom": "g", "value_numeric": "2" },
     { "id": "", "name": "Dietary Fiber (g)", "value": "less than 1 gram",
       "uom": "g", "value_numeric": "1" }
     // Calories, Total Carbohydrates (g), Sugar (g), Total Fat (g),
     // Cholesterol (mg), Sodium (mg), Potassium (mg), Calcium (mg), Iron (mg), ...
-  ]
+  ],
+  // Typed dietary and allergen tags. See §2.7.
+  "filters": [
+    { "id": "", "name": "Vegetarian", "type": "label",    "custom": null },
+    { "id": "", "name": "Egg*",       "type": "allergen", "custom": null },
+    { "id": "", "name": "Gluten",     "type": "allergen", "custom": null }
+  ],
+  "custom_allergens": []
 }
 ```
 
@@ -130,8 +154,11 @@ An item:
 
 **Three v1-specific parsing hazards:**
 
-1. **No `calories` field.** Calories exist only as a `nutrients[]` entry named
-   `"Calories"`. There is no shortcut.
+1. ~~**No `calories` field.**~~ **Corrected 2026-09-17:** items *do* carry a
+   top-level `calories` number, and on all 20 fixture items it equals the
+   `"Calories"` nutrient exactly. `normalize.ts` reads the nutrient and is
+   therefore correct either way; no code change is needed. Prefer the nutrient
+   regardless, so one code path handles every macro.
 2. **`value` may be prose, not a number** — `"less than 1 gram"` was observed.
    Only `value_numeric` is safely parseable, and it rounds (that item reports
    `"1"`).
@@ -153,6 +180,45 @@ Northwestern's `f00d` (WildHacks 2022) and Michigan Tech's D.I.S.H (last updated
 March 2025) both consume this API; D.I.S.H's `API_documentation.md` is where the
 v1 endpoint shapes came from. Neither targets UChicago, and neither does
 macro-target plate building. Their existence saved us the endpoint archaeology.
+
+### 2.7 Allergen and dietary data (added 2026-09-17)
+
+Every item carries a `filters[]` array of typed tags. Observed in the captured
+Baker fixture — 20 items, all 20 tagged:
+
+| `type` | Observed names |
+|---|---|
+| `label` | Vegetarian (18), Avoiding Gluten (10), Good Source of Protein (6), Vegan (5), How Good Friendly (3) |
+| `allergen` | Gluten, Milk, Wheat, Soy, Egg, Onion, Garlic, Pork, Poultry, Sulphites, Strawberry, Orange, Celery\*, Mustard\*, MSG\*, Beef\*, Milk\*, Egg\*, Gluten\* |
+
+Three consequences:
+
+1. **Allergen filtering needs no new request and no ingredient parsing.** The
+   data is already in every response we fetch. This makes most of the §9
+   `allergen_filter` question moot.
+2. **`filters[].id` is `""`**, exactly like `nutrients[].id`. Tags can only be
+   matched by name string, with the same fragility (§5.4).
+3. **`custom_allergens` is present but empty** on all 20 items. Treat it as
+   unpopulated-for-now, not absent.
+
+**The `*` suffix is undecoded and safety-critical.** Some allergen names end in
+`*` and some do not, and both forms occur — "Hard Boiled Egg" is tagged `Egg`,
+while "Blueberry Muffin" is tagged `Egg*` with no egg in its visible ingredient
+list. The plausible reading is *unstarred = declared ingredient, starred =
+trace or inherited from an unexpanded `^` sub-recipe*.
+
+Measured over the fixture, starred allergens never appear as a word in the
+ingredient text (0/11) and always sit on an item containing a `^` sub-recipe
+(11/11); unstarred appear 26.5% of the time and carry a caret 89.8% of the
+time. Directionally consistent, **not conclusive** — the caret rate barely
+discriminates, and one hall on one day is a thin sample.
+
+`scripts/probe-allergens.js` tests this at scale against live data.
+
+**Until `*` is confirmed, do not ship a filter that asserts a dish is safe.**
+If the reading is wrong, the failure mode is an allergic reaction. Either treat
+starred and unstarred identically (always warn), or get confirmation from Dine
+On Campus (§9). Surface allergens; never certify their absence.
 
 ---
 
@@ -274,8 +340,12 @@ name string** (`"Protein (g)"`, `"Total Fat (g)"`). All values are strings.
 - exposes `MenuItem.macrosComplete: boolean` so the UI can flag incomplete items
   and the optimizer can exclude them
 
-The `^` suffix in `ingredients` (`"Liquid Egg^"`) is an allergen marker; the
-convention needs decoding before allergen filtering (§9).
+~~The `^` suffix in `ingredients` (`"Liquid Egg^"`) is an allergen marker.~~
+**Corrected 2026-09-17:** `^` marks a **sub-recipe** — a compound ingredient
+whose own ingredients are not expanded inline. It is not an allergen marker.
+The fixture carries `Light Brown Sugar^` and `All Purpose Flour^`, neither an
+allergen, alongside `Liquid Egg^`. Allergens are tagged separately and
+explicitly in `filters[]` (§2.7), so no ingredient-string parsing is needed.
 
 ---
 
@@ -341,8 +411,17 @@ filters, saved targets, share-a-plate links. Scoped by what users ask for.
   the only real mitigation for the v1-retirement risk, and an approved feed would
   also let history back into scope.
 - **Terms of service.** Read Dine On Campus's ToS before public launch.
-- **`allergen_filter`** appears as a top-level response field, implying a
-  server-side allergen filter parameter. Probing it may remove M3 work.
+- ~~**`allergen_filter`** appears as a top-level response field, implying a
+  server-side allergen filter parameter. Probing it may remove M3 work.~~
+  **Largely answered 2026-09-17.** It is a plain boolean, `false` in the
+  fixture. Whatever it toggles, we do not need it: per-item allergen and
+  dietary tags already ship in every response (§2.7), so filtering is a
+  client-side concern. `scripts/probe-allergens.js` still tries three
+  candidate request params, but this is no longer blocking.
+- **What does `*` mean on an allergen name?** Open, and the only
+  safety-critical unknown in this document. See §2.7. Ask Dine On Campus
+  alongside the sanctioned-access request above; do not ship a
+  safety-asserting filter on the inferred reading.
 - **Historical dates.** `date=2026-01-14` returned data on 2026-08-29. If arbitrary
   past dates are queryable, the original "rolling window" premise was wrong.
   Doesn't affect this build.
