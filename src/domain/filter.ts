@@ -7,6 +7,24 @@ export interface FilterOptions {
   minProtein?: number;
   maxCalories?: number;
   completeOnly?: boolean;
+  /**
+   * Dietary labels the dish must carry — ALL of them, not any. Selecting Vegan
+   * and Avoiding Gluten means both: a user narrowing a menu wants the
+   * intersection. Empty or absent means no label filtering.
+   */
+  labels?: string[];
+}
+
+/**
+ * True when the item carries every one of `labels`.
+ *
+ * Matched exactly, not case-insensitively. The names come from a fixed vendor
+ * vocabulary and are echoed straight back into the UI's chips, so a mismatch
+ * cannot come from user input — only from an upstream rename, which we want to
+ * surface rather than paper over.
+ */
+export function hasLabels(item: MenuItem, labels: readonly string[]): boolean {
+  return labels.every((l) => item.labels.includes(l));
 }
 
 /**
@@ -38,6 +56,7 @@ export function filterItems(
 ): MenuItem[] {
   return items.filter((i) => {
     if (opts.completeOnly && !i.macrosComplete) return false;
+    if (opts.labels?.length && !hasLabels(i, opts.labels)) return false;
     if (opts.minProtein !== undefined) {
       if (i.protein_g === null || i.protein_g < opts.minProtein) return false;
     }

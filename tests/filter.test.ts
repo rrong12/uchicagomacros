@@ -5,7 +5,8 @@ import type { MenuItem } from "../src/domain/types";
 function item(over: Partial<MenuItem>): MenuItem {
   return {
     id: "x", name: "x", description: "", portion: "", ingredients: "",
-    category: "Grill", calories: 100, protein_g: 10, fat_g: 5, carbs_g: 20,
+    category: "Grill", labels: [], allergens: [],
+    calories: 100, protein_g: 10, fat_g: 5, carbs_g: 20,
     sugar_g: null, fiber_g: null, sodium_mg: null, macrosComplete: true,
     ...over,
   };
