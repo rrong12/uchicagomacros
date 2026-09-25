@@ -1,0 +1,5875 @@
+{
+  "dates": [
+    "2026-09-25"
+  ],
+  "menus": 12,
+  "constraints": {
+    "maxItems": 6,
+    "maxPerItem": 2,
+    "minCategories": 2
+  },
+  "targetSets": {
+    "default": [
+      {
+        "calories": 800,
+        "protein_g": 40,
+        "carbs_g": 90,
+        "fat_g": 25
+      }
+    ],
+    "grid": [
+      {
+        "calories": 500,
+        "protein_g": 30,
+        "carbs_g": 57,
+        "fat_g": 17
+      },
+      {
+        "calories": 500,
+        "protein_g": 45,
+        "carbs_g": 42,
+        "fat_g": 17
+      },
+      {
+        "calories": 500,
+        "protein_g": 60,
+        "carbs_g": 27,
+        "fat_g": 17
+      },
+      {
+        "calories": 700,
+        "protein_g": 30,
+        "carbs_g": 93,
+        "fat_g": 23
+      },
+      {
+        "calories": 700,
+        "protein_g": 45,
+        "carbs_g": 78,
+        "fat_g": 23
+      },
+      {
+        "calories": 700,
+        "protein_g": 60,
+        "carbs_g": 63,
+        "fat_g": 23
+      },
+      {
+        "calories": 900,
+        "protein_g": 30,
+        "carbs_g": 128,
+        "fat_g": 30
+      },
+      {
+        "calories": 900,
+        "protein_g": 45,
+        "carbs_g": 113,
+        "fat_g": 30
+      },
+      {
+        "calories": 900,
+        "protein_g": 60,
+        "carbs_g": 98,
+        "fat_g": 30
+      }
+    ]
+  },
+  "results": {
+    "default": {
+      "summary": {
+        "runs": 12,
+        "meanDeviation": 0.08184895833333335,
+        "medianDeviation": 0.05744791666666667,
+        "p90Deviation": 0.19786458333333334,
+        "maxDeviation": 0.20083333333333334,
+        "perMacroMeanError": {
+          "calories": 0.04114583333333333,
+          "protein_g": 0.03958333333333334,
+          "carbs_g": 0.05833333333333333,
+          "fat_g": 0.18833333333333335
+        },
+        "shortfalls": 0
+      },
+      "runs": [
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.025868055555555557,
+          "macroError": {
+            "calories": 0.05625,
+            "protein_g": 0.025,
+            "carbs_g": 0.022222222222222223,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 755,
+            "protein_g": 41,
+            "carbs_g": 92,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Oatmeal",
+              "category": "Breakfast Cereal",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Oats 'n Honey Granola",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.19645833333333335,
+          "macroError": {
+            "calories": 0.1125,
+            "protein_g": 0,
+            "carbs_g": 0.03333333333333333,
+            "fat_g": 0.64
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 890,
+            "protein_g": 40,
+            "carbs_g": 93,
+            "fat_g": 41
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Roast Beef",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.06215277777777778,
+          "macroError": {
+            "calories": 0.0125,
+            "protein_g": 0.025,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0.1
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 810,
+            "protein_g": 41,
+            "carbs_g": 100,
+            "fat_g": 27.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Soy Sauce",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.02621527777777778,
+          "macroError": {
+            "calories": 0.04375,
+            "protein_g": 0.05,
+            "carbs_g": 0.011111111111111112,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 765,
+            "protein_g": 42,
+            "carbs_g": 91,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Oatmeal",
+              "category": "Breakfast Cereal",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Green Seedless Grapes",
+              "category": "Kosher Entrees",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.20083333333333334,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.25,
+            "carbs_g": 0.03333333333333333,
+            "fat_g": 0.52
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 800,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 38
+          },
+          "plate": [
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.057777777777777775,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0.12
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 100,
+            "fat_g": 28
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.03048611111111111,
+          "macroError": {
+            "calories": 0.0375,
+            "protein_g": 0,
+            "carbs_g": 0.044444444444444446,
+            "fat_g": 0.04
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 770,
+            "protein_g": 40,
+            "carbs_g": 94,
+            "fat_g": 26
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 1
+            },
+            {
+              "name": "Meatless Vegetarian Sausage Patty",
+              "category": "Flame Breakfast",
+              "servings": 1
+            },
+            {
+              "name": "Berry Oatmeal",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.04236111111111111,
+          "macroError": {
+            "calories": 0.05,
+            "protein_g": 0.075,
+            "carbs_g": 0.044444444444444446,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 760,
+            "protein_g": 43,
+            "carbs_g": 94,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Veggie Power Bowl",
+              "category": "Rooted Creations",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.059027777777777776,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.025,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0.1
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 800,
+            "protein_g": 39,
+            "carbs_g": 100,
+            "fat_g": 27.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.025868055555555557,
+          "macroError": {
+            "calories": 0.05625,
+            "protein_g": 0.025,
+            "carbs_g": 0.022222222222222223,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 755,
+            "protein_g": 41,
+            "carbs_g": 92,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Oatmeal",
+              "category": "Breakfast Cereal",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Oats 'n Honey Granola",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.19802083333333334,
+          "macroError": {
+            "calories": 0.11875,
+            "protein_g": 0,
+            "carbs_g": 0.03333333333333333,
+            "fat_g": 0.64
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 895,
+            "protein_g": 40,
+            "carbs_g": 93,
+            "fat_g": 41
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Roast Beef",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 800,
+            "protein_g": 40,
+            "carbs_g": 90,
+            "fat_g": 25
+          },
+          "deviation": 0.057118055555555554,
+          "macroError": {
+            "calories": 0.00625,
+            "protein_g": 0,
+            "carbs_g": 0.12222222222222222,
+            "fat_g": 0.1
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 805,
+            "protein_g": 40,
+            "carbs_g": 101,
+            "fat_g": 27.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 2
+            },
+            {
+              "name": "Baby Spinach",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        }
+      ]
+    },
+    "grid": {
+      "summary": {
+        "runs": 108,
+        "meanDeviation": 0.0674435190300721,
+        "medianDeviation": 0.04791666666666666,
+        "p90Deviation": 0.16664332399626516,
+        "maxDeviation": 0.22219887955182072,
+        "perMacroMeanError": {
+          "calories": 0.043062904174015246,
+          "protein_g": 0.06224279835390944,
+          "carbs_g": 0.031239631209742377,
+          "fat_g": 0.13322874238262145
+        },
+        "shortfalls": 0
+      },
+      "runs": [
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.18209494324045408,
+          "macroError": {
+            "calories": 0.2,
+            "protein_g": 0,
+            "carbs_g": 0.17543859649122806,
+            "fat_g": 0.35294117647058826
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 600,
+            "protein_g": 30,
+            "carbs_g": 67,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.03968253968253968,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.1111111111111111,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 500,
+            "protein_g": 40,
+            "carbs_g": 44,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Vanilla Coconut Overnight Oats",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Vegan Tofu Breakfast Skillet",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.033039215686274506,
+          "macroError": {
+            "calories": 0.04,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.058823529411764705
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 520,
+            "protein_g": 58,
+            "carbs_g": 27,
+            "fat_g": 18
+          },
+          "plate": [
+            {
+              "name": "Eggs",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Chilaquiles Rojos",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.02699859747545582,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0.06451612903225806,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 99,
+            "fat_g": 22
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Real Maple Syrup",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.014682539682539682,
+          "macroError": {
+            "calories": 0.014285714285714285,
+            "protein_g": 0.044444444444444446,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 690,
+            "protein_g": 43,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Fresh Berries",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.0617063492063492,
+          "macroError": {
+            "calories": 0.07142857142857142,
+            "protein_g": 0.016666666666666666,
+            "carbs_g": 0.15873015873015872,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 750,
+            "protein_g": 59,
+            "carbs_g": 73,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.030598958333333332,
+          "macroError": {
+            "calories": 0.03333333333333333,
+            "protein_g": 0,
+            "carbs_g": 0.0390625,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 930,
+            "protein_g": 30,
+            "carbs_g": 133,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Plain Bagel",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Turkey Breakfast Sausage",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Turkey Sausage Patty",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Vanilla Oat Churro Pancakes",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04861111111111111,
+          "macroError": {
+            "calories": 0.027777777777777776,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.1
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 925,
+            "protein_g": 56,
+            "carbs_g": 98,
+            "fat_g": 33
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Vanilla Coconut Overnight Oats",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.12294117647058823,
+          "macroError": {
+            "calories": 0.08,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.4117647058823529
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 540,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Croutons",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.15095704948646124,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.044444444444444446,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0.4117647058823529
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 550,
+            "protein_g": 43,
+            "carbs_g": 44,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Soy Sauce",
+              "category": "Cucina",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.16764705882352943,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.1,
+            "carbs_g": 0,
+            "fat_g": 0.47058823529411764
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 550,
+            "protein_g": 54,
+            "carbs_g": 27,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Low Fat Strawberry Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.031107660455486543,
+          "macroError": {
+            "calories": 0.014285714285714285,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 710,
+            "protein_g": 32,
+            "carbs_g": 93,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Low Fat Strawberry Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.027106227106227107,
+          "macroError": {
+            "calories": 0.05714285714285714,
+            "protein_g": 0,
+            "carbs_g": 0.05128205128205128,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 740,
+            "protein_g": 45,
+            "carbs_g": 82,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Roast Beef",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "500 Degrees",
+              "servings": 1
+            },
+            {
+              "name": "Jasmine Rice",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Ranch Dressing",
+              "category": "Fresh 52 - Salad Dressing",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.03662008281573499,
+          "macroError": {
+            "calories": 0.04285714285714286,
+            "protein_g": 0.016666666666666666,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 730,
+            "protein_g": 61,
+            "carbs_g": 63,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 1
+            },
+            {
+              "name": "Black Beans",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.09084201388888888,
+          "macroError": {
+            "calories": 0.05555555555555555,
+            "protein_g": 0,
+            "carbs_g": 0.0078125,
+            "fat_g": 0.3
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 950,
+            "protein_g": 30,
+            "carbs_g": 129,
+            "fat_g": 39
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Buffalo Vegan Tenders",
+              "category": "Kosher Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Black Beans",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.11388888888888889,
+          "macroError": {
+            "calories": 0.08888888888888889,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.36666666666666664
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 980,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 41
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Roast Beef",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Croutons",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.03475056689342404,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0,
+            "carbs_g": 0.061224489795918366,
+            "fat_g": 0.06666666666666667
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 910,
+            "protein_g": 60,
+            "carbs_g": 104,
+            "fat_g": 32
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 2
+            },
+            {
+              "name": "Thinly Sliced Smoked Turkey Breast",
+              "category": "Deli 773 - Protein",
+              "servings": 2
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.03735294117647059,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.1,
+            "carbs_g": 0,
+            "fat_g": 0.029411764705882353
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 33,
+            "carbs_g": 57,
+            "fat_g": 16.5
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "White Bread",
+              "category": "Deli 773 - Bread",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.022460317460317458,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 44,
+            "carbs_g": 44,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Orange Sauce",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Soy Sauce",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.11102941176470589,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.05,
+            "carbs_g": 0,
+            "fat_g": 0.29411764705882354
+          },
+          "shortfall": null,
+          "servings": 2,
+          "totals": {
+            "calories": 550,
+            "protein_g": 57,
+            "carbs_g": 27,
+            "fat_g": 22
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Thyme Roasted Turkey Thigh",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.037215320910973085,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 720,
+            "protein_g": 31,
+            "carbs_g": 93,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Dried Apricots",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 2
+            },
+            {
+              "name": "Golden Raisins",
+              "category": "Fresh 52 - Salad Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Daily Special",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.039916786112438284,
+          "macroError": {
+            "calories": 0.02142857142857143,
+            "protein_g": 0,
+            "carbs_g": 0.05128205128205128,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 715,
+            "protein_g": 45,
+            "carbs_g": 82,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Cucina",
+              "servings": 2
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Daily Special",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.06316425120772946,
+          "macroError": {
+            "calories": 0.04285714285714286,
+            "protein_g": 0,
+            "carbs_g": 0.07936507936507936,
+            "fat_g": 0.13043478260869565
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 730,
+            "protein_g": 60,
+            "carbs_g": 68,
+            "fat_g": 26
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Bread",
+              "category": "Deli 773 - Bread",
+              "servings": 1
+            },
+            {
+              "name": "Thinly Sliced Smoked Turkey Breast",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.02638888888888889,
+          "macroError": {
+            "calories": 0.022222222222222223,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.016666666666666666
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 920,
+            "protein_g": 32,
+            "carbs_g": 128,
+            "fat_g": 30.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 1
+            },
+            {
+              "name": "Jasmine Rice",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Garlic & Herb Breadstick",
+              "category": "Cucina Daily Special",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.004166666666666667,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.016666666666666666
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 29.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Soup",
+              "category": "Fresh 52 - Soups",
+              "servings": 1
+            },
+            {
+              "name": "Kimchi",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Soy Sauce",
+              "category": "Cucina",
+              "servings": 1
+            },
+            {
+              "name": "Sesame Seed Mix",
+              "category": "Cucina",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Baker",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04861111111111111,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.15
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 34.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.18209494324045408,
+          "macroError": {
+            "calories": 0.2,
+            "protein_g": 0,
+            "carbs_g": 0.17543859649122806,
+            "fat_g": 0.35294117647058826
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 600,
+            "protein_g": 30,
+            "carbs_g": 67,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.05642390289449113,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.09523809523809523,
+            "fat_g": 0.08823529411764706
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 44,
+            "carbs_g": 46,
+            "fat_g": 15.5
+          },
+          "plate": [
+            {
+              "name": "Eggs",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Kaiser Roll",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.0175,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.05,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 510,
+            "protein_g": 57,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Dried Cranberries",
+              "category": "Breakfast Cereal",
+              "servings": 1
+            },
+            {
+              "name": "Scrambled Eggs",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Entrees",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.033122119815668205,
+          "macroError": {
+            "calories": 0.03571428571428571,
+            "protein_g": 0,
+            "carbs_g": 0.0967741935483871,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 725,
+            "protein_g": 30,
+            "carbs_g": 102,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Ratatouille",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Entrees",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.03192918192918193,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.07692307692307693,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 720,
+            "protein_g": 44,
+            "carbs_g": 84,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Entrees",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.07539682539682539,
+          "macroError": {
+            "calories": 0.007142857142857143,
+            "protein_g": 0.18333333333333332,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 695,
+            "protein_g": 49,
+            "carbs_g": 70,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.04613715277777777,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0.1,
+            "carbs_g": 0.0234375,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 910,
+            "protein_g": 27,
+            "carbs_g": 131,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Eggs",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Plain Bagel",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.010545722713864307,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.008849557522123894,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 910,
+            "protein_g": 46,
+            "carbs_g": 114,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Kaiser Roll",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Meatless Vegetarian Sausage Patty",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.03914399092970522,
+          "macroError": {
+            "calories": 0.005555555555555556,
+            "protein_g": 0.1,
+            "carbs_g": 0.05102040816326531,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 905,
+            "protein_g": 54,
+            "carbs_g": 103,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "French Toast Sticks",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Entrees",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.1302941176470588,
+          "macroError": {
+            "calories": 0.08,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.4411764705882353
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 540,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 24.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Pita Chips",
+              "category": "Kosher Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Flame Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Julienne Yellow Onions",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.21069094304388422,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.37777777777777777,
+            "carbs_g": 0.023809523809523808,
+            "fat_g": 0.4411764705882353
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 500,
+            "protein_g": 28,
+            "carbs_g": 43,
+            "fat_g": 24.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Snap Peas",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.17166666666666666,
+          "macroError": {
+            "calories": 0.12,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.5
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 560,
+            "protein_g": 56,
+            "carbs_g": 27,
+            "fat_g": 25.5
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Pita Chips",
+              "category": "Kosher Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.010869565217391304,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Julienne Yellow Onions",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sweet Chili Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.1019283856240378,
+          "macroError": {
+            "calories": 0.08571428571428572,
+            "protein_g": 0.2222222222222222,
+            "carbs_g": 0.01282051282051282,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 760,
+            "protein_g": 55,
+            "carbs_g": 77,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Flame Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Jasmine Rice",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Spicy Sweet Homemade Barbecue Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sweet Chili Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.03285024154589372,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0,
+            "carbs_g": 0.015873015873015872,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 720,
+            "protein_g": 60,
+            "carbs_g": 64,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Spicy Sweet Homemade Barbecue Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.08528645833333333,
+          "macroError": {
+            "calories": 0.03333333333333333,
+            "protein_g": 0,
+            "carbs_g": 0.0078125,
+            "fat_g": 0.3
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 930,
+            "protein_g": 30,
+            "carbs_g": 127,
+            "fat_g": 39
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Flame Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Snap Peas",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Buffalo Vegan Tenders",
+              "category": "Kosher Entrees",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.12999016715830874,
+          "macroError": {
+            "calories": 0.1111111111111111,
+            "protein_g": 0,
+            "carbs_g": 0.008849557522123894,
+            "fat_g": 0.4
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 1000,
+            "protein_g": 45,
+            "carbs_g": 114,
+            "fat_g": 42
+          },
+          "plate": [
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Chicken",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Spicy Sweet Homemade Barbecue Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.16621315192743763,
+          "macroError": {
+            "calories": 0.07777777777777778,
+            "protein_g": 0.1,
+            "carbs_g": 0.02040816326530612,
+            "fat_g": 0.4666666666666667
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 970,
+            "protein_g": 54,
+            "carbs_g": 100,
+            "fat_g": 44
+          },
+          "plate": [
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 2
+            },
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Snap Peas",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.050686274509803925,
+          "macroError": {
+            "calories": 0.04,
+            "protein_g": 0.13333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.029411764705882353
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 520,
+            "protein_g": 34,
+            "carbs_g": 57,
+            "fat_g": 16.5
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Hamburger Bun",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Julienne Yellow Onions",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.0673015873015873,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.17777777777777778,
+            "carbs_g": 0.07142857142857142,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 490,
+            "protein_g": 37,
+            "carbs_g": 45,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Snap Peas",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 2
+            },
+            {
+              "name": "Black Bean Soup",
+              "category": "Fresh 52-Soups",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.11186274509803922,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.13333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.29411764705882354
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 510,
+            "protein_g": 52,
+            "carbs_g": 27,
+            "fat_g": 22
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.014440993788819875,
+          "macroError": {
+            "calories": 0.014285714285714285,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 710,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Steamed Broccoli",
+              "category": "Halal",
+              "servings": 1
+            },
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Jasmine Rice",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Spicy Sweet Homemade Barbecue Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.09084912671869193,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.17777777777777778,
+            "carbs_g": 0.07692307692307693,
+            "fat_g": 0.10869565217391304
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 700,
+            "protein_g": 37,
+            "carbs_g": 84,
+            "fat_g": 25.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Snap Peas",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.03007246376811594,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 700,
+            "protein_g": 58,
+            "carbs_g": 63,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Chicken",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Mushrooms",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 2
+            },
+            {
+              "name": "Black Bean Soup",
+              "category": "Fresh 52-Soups",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Chard and White Beans",
+              "category": "Rooted Entrees and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.09027777777777778,
+          "macroError": {
+            "calories": 0.027777777777777776,
+            "protein_g": 0.3,
+            "carbs_g": 0,
+            "fat_g": 0.03333333333333333
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 925,
+            "protein_g": 39,
+            "carbs_g": 128,
+            "fat_g": 29
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Julienne Yellow Onions",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sweet Chili Sauce",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Butternut Squash and Spinach Risotto",
+              "category": "Rooted Entrees and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.0413102261553589,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0.07079646017699115,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 45,
+            "carbs_g": 121,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Chard and White Beans",
+              "category": "Rooted Entrees and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Cathey",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04861111111111111,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.15
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 34.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.18209494324045408,
+          "macroError": {
+            "calories": 0.2,
+            "protein_g": 0,
+            "carbs_g": 0.17543859649122806,
+            "fat_g": 0.35294117647058826
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 600,
+            "protein_g": 30,
+            "carbs_g": 67,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.05642390289449113,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.09523809523809523,
+            "fat_g": 0.08823529411764706
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 44,
+            "carbs_g": 46,
+            "fat_g": 15.5
+          },
+          "plate": [
+            {
+              "name": "Eggs",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Kaiser Roll",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.06622549019607843,
+          "macroError": {
+            "calories": 0.01,
+            "protein_g": 0.16666666666666666,
+            "carbs_g": 0,
+            "fat_g": 0.08823529411764706
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 495,
+            "protein_g": 50,
+            "carbs_g": 27,
+            "fat_g": 18.5
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Scrambled Eggs",
+              "category": "Flame Breakfast",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 1
+            },
+            {
+              "name": "Berry Oatmeal",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.0072204968944099375,
+          "macroError": {
+            "calories": 0.007142857142857143,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.021739130434782608
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 705,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23.5
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 1
+            },
+            {
+              "name": "Ground Cinnamon",
+              "category": "Breakfast Cereal",
+              "servings": 2
+            },
+            {
+              "name": "Berry Oatmeal",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.027014652014652012,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0.01282051282051282,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 720,
+            "protein_g": 48,
+            "carbs_g": 77,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            },
+            {
+              "name": "Dried Cranberries",
+              "category": "Breakfast Cereal",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.07539682539682539,
+          "macroError": {
+            "calories": 0.007142857142857143,
+            "protein_g": 0.18333333333333332,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 695,
+            "protein_g": 49,
+            "carbs_g": 70,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.030598958333333332,
+          "macroError": {
+            "calories": 0.03333333333333333,
+            "protein_g": 0,
+            "carbs_g": 0.0390625,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 930,
+            "protein_g": 30,
+            "carbs_g": 133,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Plain Bagel",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Turkey Breakfast Sausage",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Turkey Sausage Patty",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            },
+            {
+              "name": "Vanilla Oat Churro Pancakes",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04722222222222222,
+          "macroError": {
+            "calories": 0.005555555555555556,
+            "protein_g": 0.11666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.06666666666666667
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 895,
+            "protein_g": 53,
+            "carbs_g": 98,
+            "fat_g": 32
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Flame Breakfast",
+              "servings": 2
+            },
+            {
+              "name": "Real Maple Syrup",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Turkey Breakfast Sausage",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.14847781217750258,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.4,
+            "carbs_g": 0.03508771929824561,
+            "fat_g": 0.058823529411764705
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 450,
+            "protein_g": 18,
+            "carbs_g": 59,
+            "fat_g": 18
+          },
+          "plate": [
+            {
+              "name": "Veggie Power Bowl",
+              "category": "Rooted Creations",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 2
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 2
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.22219887955182072,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.4,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0.4411764705882353
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 500,
+            "protein_g": 27,
+            "carbs_g": 44,
+            "fat_g": 24.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Citrus Beet Salad",
+              "category": "Halal Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.17416666666666666,
+          "macroError": {
+            "calories": 0.13,
+            "protein_g": 0.06666666666666667,
+            "carbs_g": 0,
+            "fat_g": 0.5
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 565,
+            "protein_g": 56,
+            "carbs_g": 27,
+            "fat_g": 25.5
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Pita Chips",
+              "category": "Kosher Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.01265527950310559,
+          "macroError": {
+            "calories": 0.007142857142857143,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 705,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Strawberry Compote",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Mandarin Orange Sections",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.06400103519668737,
+          "macroError": {
+            "calories": 0.03571428571428571,
+            "protein_g": 0.13333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 725,
+            "protein_g": 51,
+            "carbs_g": 78,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Real Maple Syrup",
+              "category": "Crave Global Toppings",
+              "servings": 2
+            },
+            {
+              "name": "Strawberry Compote",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Cucumber",
+              "category": "Kosher Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.037215320910973085,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 720,
+            "protein_g": 58,
+            "carbs_g": 63,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Strawberry Compote",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.10334201388888889,
+          "macroError": {
+            "calories": 0.07222222222222222,
+            "protein_g": 0,
+            "carbs_g": 0.0078125,
+            "fat_g": 0.3333333333333333
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 965,
+            "protein_g": 30,
+            "carbs_g": 129,
+            "fat_g": 40
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Buffalo Vegan Tenders",
+              "category": "Kosher Entrees",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 1
+            },
+            {
+              "name": "Chick Peas",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.18827433628318585,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.4,
+            "carbs_g": 0.05309734513274336,
+            "fat_g": 0.3
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 900,
+            "protein_g": 27,
+            "carbs_g": 119,
+            "fat_g": 39
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Buffalo Vegan Tenders",
+              "category": "Kosher Entrees",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.03171768707482993,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.08333333333333333,
+            "carbs_g": 0.01020408163265306,
+            "fat_g": 0.03333333333333333
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 900,
+            "protein_g": 65,
+            "carbs_g": 97,
+            "fat_g": 31
+          },
+          "plate": [
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 2
+            },
+            {
+              "name": "Veggie Power Bowl",
+              "category": "Rooted Creations",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Cucumber",
+              "category": "Kosher Sides",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Red Onion",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Real Maple Syrup",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Shaved Brussel Sprouts & Kale Salad",
+              "category": "Rooted Creations",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Cucumber",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.06384920634920635,
+          "macroError": {
+            "calories": 0.03,
+            "protein_g": 0.17777777777777778,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 485,
+            "protein_g": 37,
+            "carbs_g": 44,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Steamed Broccoli",
+              "category": "Halal",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 2
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 1
+            },
+            {
+              "name": "Chick Peas",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.11102941176470589,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.05,
+            "carbs_g": 0,
+            "fat_g": 0.29411764705882354
+          },
+          "shortfall": null,
+          "servings": 2,
+          "totals": {
+            "calories": 550,
+            "protein_g": 57,
+            "carbs_g": 27,
+            "fat_g": 22
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Thyme Roasted Turkey Thigh",
+              "category": "Pure Eats Entrée and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.03364389233954451,
+          "macroError": {
+            "calories": 0.014285714285714285,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 710,
+            "protein_g": 31,
+            "carbs_g": 93,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Blueberry Lemon Compote",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Cucumber",
+              "category": "Kosher Sides",
+              "servings": 2
+            },
+            {
+              "name": "Mandarin Orange Sections",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.09307745394701916,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.2222222222222222,
+            "carbs_g": 0.01282051282051282,
+            "fat_g": 0.10869565217391304
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 680,
+            "protein_g": 35,
+            "carbs_g": 79,
+            "fat_g": 25.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            },
+            {
+              "name": "Grated Parmesan Cheese",
+              "category": "Cucina Pizza",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Kosher Sides",
+              "servings": 2
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.005434782608695652,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.021739130434782608
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23.5
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Steamed Broccoli",
+              "category": "Halal",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Whole Wheat Hamburger Bun",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Kosher Sides",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Cucumber",
+              "category": "Kosher Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.06944444444444445,
+          "macroError": {
+            "calories": 0.027777777777777776,
+            "protein_g": 0.23333333333333334,
+            "carbs_g": 0,
+            "fat_g": 0.016666666666666666
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 925,
+            "protein_g": 37,
+            "carbs_g": 128,
+            "fat_g": 30.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Caramelized Onions",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Real Maple Syrup",
+              "category": "Crave Global Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.0413102261553589,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0.07079646017699115,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 45,
+            "carbs_g": 121,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Chard and White Beans",
+              "category": "Rooted Entrees and Sides",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Woodlawn",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04861111111111111,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.15
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 34.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.18209494324045408,
+          "macroError": {
+            "calories": 0.2,
+            "protein_g": 0,
+            "carbs_g": 0.17543859649122806,
+            "fat_g": 0.35294117647058826
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 600,
+            "protein_g": 30,
+            "carbs_g": 67,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.03968253968253968,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0.1111111111111111,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 500,
+            "protein_g": 40,
+            "carbs_g": 44,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Vanilla Coconut Overnight Oats",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Vegan Tofu Potato Breakfast Skillet",
+              "category": "Kosher Dairy Bartlett",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.050277777777777775,
+          "macroError": {
+            "calories": 0.04,
+            "protein_g": 0.05,
+            "carbs_g": 0.1111111111111111,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 520,
+            "protein_g": 57,
+            "carbs_g": 30,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Vanilla Coconut Overnight Oats",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Turkey Sausage Patty",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.009831029185867896,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0,
+            "carbs_g": 0.010752688172043012,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 680,
+            "protein_g": 30,
+            "carbs_g": 92,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Dairy Bartlett",
+              "servings": 1
+            },
+            {
+              "name": "Ratatouille",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.03192918192918193,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.07692307692307693,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 720,
+            "protein_g": 44,
+            "carbs_g": 84,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Dairy Bartlett",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.0617063492063492,
+          "macroError": {
+            "calories": 0.07142857142857142,
+            "protein_g": 0.016666666666666666,
+            "carbs_g": 0.15873015873015872,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 750,
+            "protein_g": 59,
+            "carbs_g": 73,
+            "fat_g": 23
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.04613715277777777,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0.1,
+            "carbs_g": 0.0234375,
+            "fat_g": 0.05
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 910,
+            "protein_g": 27,
+            "carbs_g": 131,
+            "fat_g": 31.5
+          },
+          "plate": [
+            {
+              "name": "Eggs",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Spinach",
+              "category": "Omelet",
+              "servings": 2
+            },
+            {
+              "name": "Plain Bagel",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.010545722713864307,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.008849557522123894,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 910,
+            "protein_g": 46,
+            "carbs_g": 114,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Kaiser Roll",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            },
+            {
+              "name": "Meatless Vegetarian Sausage Patty",
+              "category": "Kitchen",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Breakfast",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.03914399092970522,
+          "macroError": {
+            "calories": 0.005555555555555556,
+            "protein_g": 0.1,
+            "carbs_g": 0.05102040816326531,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 905,
+            "protein_g": 54,
+            "carbs_g": 103,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Egg Whites",
+              "category": "Omelet",
+              "servings": 1
+            },
+            {
+              "name": "Cinnamon Crumb Coffee Cake",
+              "category": "Sweet Shoppe",
+              "servings": 1
+            },
+            {
+              "name": "Yogurt, Vanilla, Greek, Chobani, 5.3 oz",
+              "category": "Kosher Dairy Bartlett",
+              "servings": 1
+            },
+            {
+              "name": "French Toast Sticks",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Canadian Bacon",
+              "category": "Kitchen",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.12794117647058822,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.4117647058823529
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 550,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 2
+            },
+            {
+              "name": "Croutons",
+              "category": "Fresh 52 Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.1554014939309057,
+          "macroError": {
+            "calories": 0.14,
+            "protein_g": 0.022222222222222223,
+            "carbs_g": 0.047619047619047616,
+            "fat_g": 0.4117647058823529
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 570,
+            "protein_g": 46,
+            "carbs_g": 44,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.17014705882352943,
+          "macroError": {
+            "calories": 0.11,
+            "protein_g": 0.1,
+            "carbs_g": 0,
+            "fat_g": 0.47058823529411764
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 555,
+            "protein_g": 54,
+            "carbs_g": 27,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Low Fat Vanilla Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.010869565217391304,
+          "macroError": {
+            "calories": 0,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.043478260869565216
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 24
+          },
+          "plate": [
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Apple Jelly",
+              "category": "Avoiding Gluten Pantry",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.08761214630779848,
+          "macroError": {
+            "calories": 0.08571428571428572,
+            "protein_g": 0.17777777777777778,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 760,
+            "protein_g": 53,
+            "carbs_g": 78,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Grape Jelly",
+              "category": "Avoiding Gluten Pantry",
+              "servings": 1
+            },
+            {
+              "name": "Apple Jelly",
+              "category": "Avoiding Gluten Pantry",
+              "servings": 2
+            },
+            {
+              "name": "Cilantro Lime Rice ",
+              "category": "Sabroso",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.03126293995859213,
+          "macroError": {
+            "calories": 0.02142857142857143,
+            "protein_g": 0.016666666666666666,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 715,
+            "protein_g": 59,
+            "carbs_g": 63,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Curry Braised Beef",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Lemon Couscous",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Kachumber Salad",
+              "category": "Pure Eats Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Red Seedless Grapes",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.09223090277777778,
+          "macroError": {
+            "calories": 0.06111111111111111,
+            "protein_g": 0,
+            "carbs_g": 0.0078125,
+            "fat_g": 0.3
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 955,
+            "protein_g": 30,
+            "carbs_g": 129,
+            "fat_g": 39
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Black Beans",
+              "category": "Fresh 52 Toppings",
+              "servings": 1
+            },
+            {
+              "name": "Buffalo Vegan Tenders",
+              "category": "Kosher Dairy Bartlett",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.11666666666666667,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.36666666666666664
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 990,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 41
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Roast Beef",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 2
+            },
+            {
+              "name": "Croutons",
+              "category": "Fresh 52 Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Lunch",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.036139455782312924,
+          "macroError": {
+            "calories": 0.016666666666666666,
+            "protein_g": 0,
+            "carbs_g": 0.061224489795918366,
+            "fat_g": 0.06666666666666667
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 915,
+            "protein_g": 60,
+            "carbs_g": 104,
+            "fat_g": 32
+          },
+          "plate": [
+            {
+              "name": "Apple Crisp",
+              "category": "Rooted Desserts",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 2
+            },
+            {
+              "name": "Thinly Sliced Smoked Turkey Breast",
+              "category": "Deli 773 - Protein",
+              "servings": 2
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52 - Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 30,
+            "carbs_g": 57,
+            "fat_g": 17
+          },
+          "deviation": 0.03735294117647059,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0.1,
+            "carbs_g": 0,
+            "fat_g": 0.029411764705882353
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 33,
+            "carbs_g": 57,
+            "fat_g": 16.5
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "White Bread",
+              "category": "Deli 773 - Bread",
+              "servings": 1
+            },
+            {
+              "name": "Sliced Tomatoes",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 2
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "deviation": 0.005,
+          "macroError": {
+            "calories": 0.02,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 510,
+            "protein_g": 45,
+            "carbs_g": 42,
+            "fat_g": 17
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 1
+            },
+            {
+              "name": "Chick Peas",
+              "category": "Fresh 52 Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 500,
+            "protein_g": 60,
+            "carbs_g": 27,
+            "fat_g": 17
+          },
+          "deviation": 0.11102941176470589,
+          "macroError": {
+            "calories": 0.1,
+            "protein_g": 0.05,
+            "carbs_g": 0,
+            "fat_g": 0.29411764705882354
+          },
+          "shortfall": null,
+          "servings": 2,
+          "totals": {
+            "calories": 550,
+            "protein_g": 57,
+            "carbs_g": 27,
+            "fat_g": 22
+          },
+          "plate": [
+            {
+              "name": "BBQ Pulled Pork",
+              "category": "Kitchen",
+              "servings": 1
+            },
+            {
+              "name": "Garlic Thyme Roasted Turkey Thigh",
+              "category": "Pure Eats Entrée",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 30,
+            "carbs_g": 93,
+            "fat_g": 23
+          },
+          "deviation": 0.037215320910973085,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.03333333333333333,
+            "carbs_g": 0,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 720,
+            "protein_g": 31,
+            "carbs_g": 93,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            },
+            {
+              "name": "Grape Jelly",
+              "category": "Avoiding Gluten Pantry",
+              "servings": 1
+            },
+            {
+              "name": "Dried Apricots",
+              "category": "Fresh 52 Toppings",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 45,
+            "carbs_g": 78,
+            "fat_g": 23
+          },
+          "deviation": 0.043488214683866856,
+          "macroError": {
+            "calories": 0.03571428571428571,
+            "protein_g": 0,
+            "carbs_g": 0.05128205128205128,
+            "fat_g": 0.08695652173913043
+          },
+          "shortfall": null,
+          "servings": 6,
+          "totals": {
+            "calories": 725,
+            "protein_g": 45,
+            "carbs_g": 82,
+            "fat_g": 25
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Ziti Pasta",
+              "category": "Cucina Pasta",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Spring Mix",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 2
+            },
+            {
+              "name": "Baby Spinach",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 700,
+            "protein_g": 60,
+            "carbs_g": 63,
+            "fat_g": 23
+          },
+          "deviation": 0.04935300207039338,
+          "macroError": {
+            "calories": 0.02857142857142857,
+            "protein_g": 0.016666666666666666,
+            "carbs_g": 0,
+            "fat_g": 0.15217391304347827
+          },
+          "shortfall": null,
+          "servings": 5,
+          "totals": {
+            "calories": 720,
+            "protein_g": 59,
+            "carbs_g": 63,
+            "fat_g": 26.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Fat Free Greek Plain Yogurt",
+              "category": "Create",
+              "servings": 1
+            },
+            {
+              "name": "Thinly Sliced Smoked Turkey Breast",
+              "category": "Deli 773 - Protein",
+              "servings": 1
+            },
+            {
+              "name": "Chopped Romaine Lettuce",
+              "category": "Fresh 52-Salad Greens and Composed Salads",
+              "servings": 1
+            },
+            {
+              "name": "Refried Beans",
+              "category": "Sabroso",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 30
+          },
+          "deviation": 0.011111111111111112,
+          "macroError": {
+            "calories": 0.011111111111111112,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.03333333333333333
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 910,
+            "protein_g": 30,
+            "carbs_g": 128,
+            "fat_g": 31
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Jasmine Rice",
+              "category": "Pure Eats Entrée",
+              "servings": 1
+            },
+            {
+              "name": "Vegan Jalapeno Cornbread with Agave Nectar",
+              "category": "Rooted Entrees and Sides",
+              "servings": 1
+            },
+            {
+              "name": "Apple Jelly",
+              "category": "Avoiding Gluten Pantry",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 45,
+            "carbs_g": 113,
+            "fat_g": 30
+          },
+          "deviation": 0.019395280235988202,
+          "macroError": {
+            "calories": 0.03333333333333333,
+            "protein_g": 0,
+            "carbs_g": 0.04424778761061947,
+            "fat_g": 0
+          },
+          "shortfall": null,
+          "servings": 4,
+          "totals": {
+            "calories": 930,
+            "protein_g": 45,
+            "carbs_g": 118,
+            "fat_g": 30
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "category": "Deli 773 - Toppings and Sauces",
+              "servings": 1
+            },
+            {
+              "name": "Refried Beans",
+              "category": "Sabroso",
+              "servings": 1
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "hall": "Bartlett",
+          "meal": "Dinner",
+          "targets": {
+            "calories": 900,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 30
+          },
+          "deviation": 0.04861111111111111,
+          "macroError": {
+            "calories": 0.044444444444444446,
+            "protein_g": 0,
+            "carbs_g": 0,
+            "fat_g": 0.15
+          },
+          "shortfall": null,
+          "servings": 3,
+          "totals": {
+            "calories": 940,
+            "protein_g": 60,
+            "carbs_g": 98,
+            "fat_g": 34.5
+          },
+          "plate": [
+            {
+              "name": "Bratwurst with Sauerkraut",
+              "category": "Flame",
+              "servings": 1
+            },
+            {
+              "name": "Grilled Chicken",
+              "category": "Everyday Flame",
+              "servings": 1
+            },
+            {
+              "name": "Black Bean Meatless Burger",
+              "category": "Everyday Flame",
+              "servings": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
