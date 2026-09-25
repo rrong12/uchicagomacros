@@ -113,6 +113,20 @@ a suggestion replaces the current plate, and asks first when it is not empty.
 Targets are saved per browser, not per hall. Every suggested plate stays fully
 editable afterward, including down to half servings.
 
+## Optimizer accuracy
+
+The plate optimizer is measured, not asserted. `npm run eval:optimizer` runs
+`suggestPlate` over real captured menus against a fixed set of macro targets and
+writes [`eval/results/optimizer-eval.md`](eval/results/optimizer-eval.md). The metric
+is the optimizer's own objective: mean relative error across calories, protein,
+carbs, and fat.
+
+On the first capture (2026-09-25, 12 hall menus), mean error was 8.2% at the default
+targets and 6.7% across a 9-target grid (medians 5.7% and 4.8%). Breakfast plates
+land within about 3%. Fat is the hardest macro to hit. Captures come from a real
+browser (`npm run eval:capture`, see `eval/capture.sh`), because the API answers
+nothing else.
+
 ## Next
 
 Share-a-plate links, and suggesting across all four halls at once. An allergen

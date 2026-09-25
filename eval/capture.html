@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+  Dev-only menu capture for the optimizer eval. Not part of the build: Vite's
+  build input is index.html only. Served by `npm run dev` and driven by
+  eval/capture.sh through headless Chrome, because the Dine On Campus v1 API only
+  answers real browsers (spec §2.2). It dumps raw v1 responses, unmodified.
+-->
+<html>
+  <body>
+    <pre id="out">pending</pre>
+    <script type="module">
+      import { HALLS } from "/src/domain/halls.ts";
+      import { fetchPeriods, fetchPeriodDetail } from "/src/api/client.ts";
+
+      const date = new URLSearchParams(location.search).get("date") ??
+        new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+      const out = document.getElementById("out");
+      try {
+        const responses = [];
+        for (const hall of HALLS) {
+          const base = await fetchPeriods(hall.id, date);
+          responses.push({ hallId: hall.id, periodId: null, raw: base });
+          const included = base?.menu?.periods?.id;
+          for (const p of base?.periods ?? []) {
+            if (p.id === included) continue;
+            responses.push({ hallId: hall.id, periodId: p.id, raw: await fetchPeriodDetail(hall.id, p.id, date) });
+          }
+        }
+        out.textContent = JSON.stringify({ date, capturedAt: new Date().toISOString(), responses });
+        out.dataset.done = "ok";
+      } catch (e) {
+        out.textContent = "ERROR " + String(e);
+        out.dataset.done = "error";
+      }
+    </script>
+  </body>
+</html>
