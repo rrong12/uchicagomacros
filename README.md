@@ -127,6 +127,11 @@ land within about 3%. Fat is the hardest macro to hit. Captures come from a real
 browser (`npm run eval:capture`, see `eval/capture.sh`), because the API answers
 nothing else.
 
+The eval also shows the gap is in the search, not the menus. A reference search found
+plates within about 2% on every menu, including the lunches where the optimizer scores
+about 20%. Planned fixes are in
+[`docs/superpowers/specs/2026-09-25-optimizer-improvements.md`](docs/superpowers/specs/2026-09-25-optimizer-improvements.md).
+
 ## Next
 
 Share-a-plate links, and suggesting across all four halls at once. An allergen

@@ -43,6 +43,9 @@ interface Run {
   macroError: Record<(typeof MACROS)[number], number>;
   shortfall: string | null;
   servings: number;
+  /** Plate totals and dishes, so a bad run can be diagnosed without rerunning. */
+  totals: MacroTargets;
+  plate: { name: string; category: string; servings: number }[];
 }
 
 function loadMenus() {
@@ -80,6 +83,8 @@ function evaluate(menus: ReturnType<typeof loadMenus>, targetSet: MacroTargets[]
         macroError,
         shortfall: plate.shortfall,
         servings: plate.selections.reduce((n, s) => n + s.servings, 0),
+        totals: plate.totals,
+        plate: plate.selections.map((s) => ({ name: s.item.name, category: s.item.category, servings: s.servings })),
       };
     }),
   );

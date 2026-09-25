@@ -90,3 +90,6 @@ calories, protein, carbs, and fat" the résumé describes.
   Baker, Cathey, and Bartlett is about 20% and drives the mean. Fat is the hardest
   macro. The résumé's "3.3%" doesn't hold as a mean on this capture (32 of 108 grid
   runs reach it). Lunch is the lead for any optimizer work.
+- The results JSON records each plate's totals and dishes, so a bad run can be diagnosed
+  without rerunning. That's how the lunch fat overshoot was traced to the greedy seed. Next
+  steps: `docs/superpowers/specs/2026-09-25-optimizer-improvements.md`.
